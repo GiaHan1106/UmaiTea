@@ -1573,3 +1573,143 @@
   font-size: 14px;
   color: var(--text-muted);
 }
+
+/* Mobile Responsive Styles (< 768px) */
+@media (max-width: 768px) {
+  .main-header {
+    flex-wrap: wrap;
+    padding: 12px 0;
+    gap: 10px;
+  }
+  
+  .search-action-container {
+    margin: 8px 0 0 0;
+    order: 3;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .logo-title {
+    font-size: 20px;
+  }
+  
+  .logo-subtitle {
+    font-size: 14px;
+  }
+  
+  /* Horizontal scroll for menu tabs */
+  .nav-links {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 10px;
+    scrollbar-width: none;
+  }
+  
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .nav-links li a {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  /* Hero Slider mobile adjustments */
+  .hero-slider {
+    height: 380px;
+  }
+  
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-desc {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-cursive {
+    font-size: 22px;
+  }
+
+  /* Category pills */
+  .category-tabs-container {
+    top: 175px; /* Adjust sticky top offset for mobile wrapped header */
+    padding: 12px 0 8px;
+  }
+  
+  .category-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+  }
+  
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .category-tab {
+    padding: 8px 16px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Product Card Grid */
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .product-info {
+    padding: 12px;
+  }
+  
+  .product-title {
+    font-size: 14px;
+    height: 38px;
+  }
+  
+  .product-desc {
+    font-size: 12px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 16px;
+  }
+  
+  .order-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* Store map and details */
+  .store-map-container {
+    height: 300px;
+  }
+
+  /* Franchise Form */
+  .franchise-form-box {
+    padding: 24px 15px;
+  }
+
+  /* Footer Section */
+  .footer {
+    padding: 50px 0 20px;
+  }
+  
+  .footer-col-title {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hide-for-mobile {
+    display: none !important;
+  }
+}
+
