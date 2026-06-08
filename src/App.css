@@ -371,7 +371,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(8, 72, 71, 0.5);
+  background: rgba(var(--primary-rgb), 0.5);
   border: 1px solid rgba(255,255,255,0.1);
   color: #ffffff;
   width: 45px;
@@ -605,7 +605,7 @@
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(2, 26, 25, 0.75);
+  background-color: rgba(var(--bg-dark-rgb), 0.75);
   backdrop-filter: blur(4px);
   z-index: 500;
   display: flex;
@@ -736,7 +736,7 @@
 
 .modal-btn-option.selected {
   border-color: var(--primary);
-  background-color: rgba(8, 72, 71, 0.08);
+  background-color: rgba(var(--primary-rgb), 0.08);
   color: var(--primary);
 }
 
@@ -765,7 +765,7 @@
 
 .modal-topping-item.selected {
   border-color: var(--primary);
-  background-color: rgba(8, 72, 71, 0.04);
+  background-color: rgba(var(--primary-rgb), 0.04);
 }
 
 [data-theme="dark"] .modal-topping-item.selected {
@@ -857,7 +857,7 @@
 .cart-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(2, 26, 25, 0.6);
+  background-color: rgba(var(--bg-dark-rgb), 0.6);
   z-index: 600;
 }
 
@@ -989,7 +989,7 @@
 
 .cart-footer {
   padding: 24px;
-  background-color: rgba(8, 72, 71, 0.03);
+  background-color: rgba(var(--primary-rgb), 0.03);
   border-top: 1px solid var(--border-color);
 }
 
@@ -1064,7 +1064,7 @@
 
 .store-card.active {
   border-color: var(--primary);
-  background-color: rgba(8, 72, 71, 0.04);
+  background-color: rgba(var(--primary-rgb), 0.04);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1106,7 +1106,7 @@
 
 .map-grid-line {
   position: absolute;
-  background: rgba(8, 72, 71, 0.05);
+  background: rgba(var(--primary-rgb), 0.05);
 }
 
 .map-pin {
@@ -1296,7 +1296,7 @@
 }
 
 .form-success-alert {
-  background-color: rgba(8, 72, 71, 0.08);
+  background-color: rgba(var(--primary-rgb), 0.08);
   border: 1px solid var(--primary);
   color: var(--primary);
   padding: 15px;

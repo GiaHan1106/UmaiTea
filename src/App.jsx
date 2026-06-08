@@ -141,7 +141,7 @@ export default function App() {
 
             {/* Simulated Mid-Promo banner */}
             <section style={{
-              background: 'linear-gradient(rgba(4, 61, 60, 0.95), rgba(4, 61, 60, 0.95)), url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=1200")',
+              background: 'linear-gradient(rgba(var(--primary-dark-rgb), 0.95), rgba(var(--primary-dark-rgb), 0.95)), url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=1200")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               color: '#ffffff',

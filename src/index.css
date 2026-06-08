@@ -1,26 +1,29 @@
 :root {
-  /* Color Palette - Crane Tea Theme */
-  --primary: #084847;       /* Dark Pine / Forest Green */
-  --primary-dark: #043d3c;  /* Deep Forest Green */
-  --primary-light: #0d6e6c; /* Light Pine Green */
-  --secondary: #cca43b;     /* Gold Accent */
-  --secondary-hover: #b08d2e;
-  --bg-light: #faf8f2;      /* Warm Ivory / Cream */
+  /* Color Palette - Wood & Cream Theme */
+  --primary: #5c3a21;       /* Warm Wood Brown */
+  --primary-rgb: 92, 58, 33;
+  --primary-dark: #2e1c0c;  /* Deep Wood Brown */
+  --primary-dark-rgb: 46, 28, 12;
+  --primary-light: #8b5a2b; /* Warm Amber Wood */
+  --secondary: #d4a373;     /* Light Amber/Oak Cream */
+  --secondary-hover: #c68b59;
+  --bg-light: #f4ede2;      /* Warm Cream Paper */
   --bg-white: #ffffff;
-  --bg-dark: #021a19;       /* Deep Pine Black */
+  --bg-dark: #17100b;       /* Deep Charcoal Black */
+  --bg-dark-rgb: 23, 16, 11;
   --bg-card-light: #ffffff;
-  --bg-card-dark: #052b2a;
-  --text-main-light: #1c2625;
-  --text-muted-light: #526261;
-  --text-main-dark: #eef5f4;
-  --text-muted-dark: #a1b0ae;
-  --border-light: #e5dfd3;
-  --border-dark: #0b3f3e;
+  --bg-card-dark: #231811;
+  --text-main-light: #2b221a;
+  --text-muted-light: #6b5d52;
+  --text-main-dark: #f4ece3;
+  --text-muted-dark: #b5a496;
+  --border-light: #ebdcc9;
+  --border-dark: #3a2a1f;
   --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(8,72,71,0.08);
-  --shadow-lg: 0 10px 25px rgba(8,72,71,0.15);
+  --shadow-md: 0 4px 12px rgba(92, 58, 33, 0.08);
+  --shadow-lg: 0 10px 25px rgba(92, 58, 33, 0.15);
   --glass-bg-light: rgba(255, 255, 255, 0.85);
-  --glass-bg-dark: rgba(2, 26, 25, 0.85);
+  --glass-bg-dark: rgba(23, 16, 11, 0.85);
 
   /* Font Families */
   --font-sans: 'Outfit', sans-serif;
