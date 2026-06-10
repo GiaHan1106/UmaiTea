@@ -68,7 +68,7 @@ export default function Footer({ setActiveTab }) {
         {/* Bottom copyright details */}
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} UmaiTea. Toàn bộ bản quyền được bảo lưu.</p>
-          <p>Thiết kế giao diện bởi Antigravity AI Code Assistant</p>
+          <p>Code by Gia Hân</p>
         </div>
       </div>
     </footer>

@@ -1,7 +1,7 @@
 /* Header Styles */
 .header-wrapper {
-  background-color: var(--primary);
-  color: #ffffff;
+  background-color: var(--primary); /* Brown background */
+  color: #ffffff;                  /* White text */
   position: relative;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
@@ -9,6 +9,7 @@
 
 .top-bar {
   background-color: var(--primary-dark);
+  color: #ffffff;
   font-size: 13px;
   padding: 8px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -23,6 +24,7 @@
 .top-bar-links a {
   margin-left: 20px;
   opacity: 0.8;
+  color: #ffffff;
 }
 
 .top-bar-links a:hover {
@@ -40,43 +42,24 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.logo-icon {
-  width: 45px;
-  height: 45px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--primary);
+  background-color: var(--bg-light); /* Cream background to make the brown logo stand out */
+  padding: 6px 18px;
+  border-radius: 30px; /* Capsule shape */
   border: 2px solid var(--secondary);
-  box-shadow: 0 0 10px rgba(204, 164, 59, 0.4);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
+.logo-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(204, 164, 59, 0.35);
+  background-color: #ffffff; /* White background on hover */
 }
 
-.logo-title {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  color: #ffffff;
-  line-height: 1.1;
-}
-
-.logo-subtitle {
-  font-family: var(--font-cursive);
-  font-size: 16px;
-  color: var(--secondary);
-  margin-top: -2px;
+.header-logo {
+  height: 38px; /* Standard capsule logo height */
+  object-fit: contain;
+  display: block;
 }
 
 /* Search and Action Bar */

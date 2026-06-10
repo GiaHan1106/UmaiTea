@@ -1,13 +1,13 @@
 :root {
   /* Color Palette - Wood & Cream Theme */
-  --primary: #5c3a21;       /* Warm Wood Brown */
-  --primary-rgb: 92, 58, 33;
-  --primary-dark: #2e1c0c;  /* Deep Wood Brown */
-  --primary-dark-rgb: 46, 28, 12;
-  --primary-light: #8b5a2b; /* Warm Amber Wood */
+  --primary: #5f3a2a;       /* Warm Wood Brown */
+  --primary-rgb: 95, 58, 42;
+  --primary-dark: #2f1d15;  /* Deep Wood Brown */
+  --primary-dark-rgb: 47, 29, 21;
+  --primary-light: #8c5c49; /* Warm Amber Wood */
   --secondary: #d4a373;     /* Light Amber/Oak Cream */
   --secondary-hover: #c68b59;
-  --bg-light: #f4ede2;      /* Warm Cream Paper */
+  --bg-light: #fff8ea;      /* Warm Cream Paper */
   --bg-white: #ffffff;
   --bg-dark: #17100b;       /* Deep Charcoal Black */
   --bg-dark-rgb: 23, 16, 11;

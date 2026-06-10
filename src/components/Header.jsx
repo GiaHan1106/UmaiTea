@@ -1,4 +1,5 @@
 import React from 'react';
+import umaiLogo from '../assets/umai-logo.png';
 
 export default function Header({
   activeTab,
@@ -33,13 +34,8 @@ export default function Header({
       </div>
 
       <div className="container main-header">
-        {/* Brand Logo */}
         <a href="#" className="logo-container" onClick={(e) => { e.preventDefault(); setActiveTab('home'); }}>
-          <div className="logo-icon">U</div>
-          <div className="logo-text">
-            <span className="logo-title">UMAITEA</span>
-            <span className="logo-subtitle">The Art of Premium Tea</span>
-          </div>
+          <img src={umaiLogo} className="header-logo" alt="UmaiTea Logo" />
         </a>
 
         {/* Search Bar - Crane Tea Replica style */}
