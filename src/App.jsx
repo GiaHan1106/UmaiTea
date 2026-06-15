@@ -3,7 +3,6 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import ProductCard from './components/ProductCard.jsx';
 import OrderModal from './components/OrderModal.jsx';
-import CartDrawer from './components/CartDrawer.jsx';
 import StoreLocator from './components/StoreLocator.jsx';
 import Franchise from './components/Franchise.jsx';
 import BlogSection from './components/BlogSection.jsx';
@@ -13,8 +12,6 @@ import './App.css';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
-  const [cart, setCart] = useState([]);
-  const [cartOpen, setCartOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [theme, setTheme] = useState('light');
   const [searchQuery, setSearchQuery] = useState('');
@@ -30,50 +27,13 @@ export default function App() {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
-  const handleAddToCart = (item) => {
-    setCart(prev => {
-      const existingIdx = prev.findIndex(cartItem => cartItem.id === item.id);
-      if (existingIdx > -1) {
-        const newCart = [...prev];
-        newCart[existingIdx].qty += item.qty;
-        newCart[existingIdx].totalPrice = newCart[existingIdx].qty * newCart[existingIdx].price;
-        return newCart;
-      }
-      return [...prev, item];
-    });
+  const handleOrderDirect = (orderItem) => {
     setSelectedProduct(null);
-    setCartOpen(true);
-  };
-
-  const handleUpdateQty = (itemId, newQty) => {
-    if (newQty <= 0) {
-      handleRemoveItem(itemId);
-      return;
-    }
-    setCart(prev =>
-      prev.map(item =>
-        item.id === itemId
-          ? { ...item, qty: newQty, totalPrice: newQty * item.price }
-          : item
-      )
-    );
-  };
-
-  const handleRemoveItem = (itemId) => {
-    setCart(prev => prev.filter(item => item.id !== itemId));
-  };
-
-  const handleCheckout = () => {
-    setCartOpen(false);
     setCheckoutSuccess(true);
-    setCart([]);
     setTimeout(() => {
       setCheckoutSuccess(false);
     }, 4000);
   };
-
-  // Helper count total items in cart
-  const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
 
   // Filtering products for the MENU page
   const filteredProducts = PRODUCTS.filter(product => {
@@ -93,8 +53,6 @@ export default function App() {
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        cartCount={cartCount}
-        setCartOpen={setCartOpen}
         theme={theme}
         toggleTheme={toggleTheme}
         searchQuery={searchQuery}
@@ -242,19 +200,9 @@ export default function App() {
         <OrderModal
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
-          onAddToCart={handleAddToCart}
+          onOrderDirect={handleOrderDirect}
         />
       )}
-
-      {/* Slide-out cart drawer panel */}
-      <CartDrawer
-        isOpen={cartOpen}
-        onClose={() => setCartOpen(false)}
-        cartItems={cart}
-        onUpdateQty={handleUpdateQty}
-        onRemoveItem={handleRemoveItem}
-        onCheckout={handleCheckout}
-      />
 
       {/* Confetti Checkout Success Alert */}
       {checkoutSuccess && (
@@ -262,7 +210,7 @@ export default function App() {
           <div className="confetti-box">
             <span className="confetti-icon">🎉</span>
             <h3 className="confetti-title">ĐẶT HÀNG THÀNH CÔNG!</h3>
-            <p className="confetti-desc">Cảm ơn bạn đã lựa chọn UmaiTea. Đơn hàng đang được hệ thống xử lý và giao nhận sớm nhất.</p>
+            <p className="confetti-desc">Đơn hàng của bạn đã được gửi thành công. UmaiTea sẽ liên hệ để giao hàng sớm nhất.</p>
           </div>
         </div>
       )}

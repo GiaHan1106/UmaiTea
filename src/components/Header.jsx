@@ -1,11 +1,9 @@
 import React from 'react';
-import umaiLogo from '../assets/umai-logo.png';
+import umaiLogo from '../assets/umai-logo.svg';
 
 export default function Header({
   activeTab,
   setActiveTab,
-  cartCount,
-  setCartOpen,
   theme,
   toggleTheme,
   searchQuery,
@@ -32,7 +30,6 @@ export default function Header({
           </div>
         </div>
       </div>
-
       <div className="container main-header">
         <a href="#" className="logo-container" onClick={(e) => { e.preventDefault(); setActiveTab('home'); }}>
           <img src={umaiLogo} className="header-logo" alt="UmaiTea Logo" />
@@ -70,24 +67,25 @@ export default function Header({
         {/* Actions (Cart & Hotline & Dark/Light Toggle) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           <a href="tel:19003076" className="hotline-btn hide-for-mobile">
-            📞 1900.3076
+            0974200611
           </a>
-
-          <button
-            className="nav-cart-btn"
-            onClick={() => setCartOpen(true)}
-            aria-label="Xem giỏ hàng"
-          >
-            🛒
-            {cartCount > 0 && <span className="cart-count-badge">{cartCount}</span>}
-          </button>
 
           <button
             className="theme-toggle-header"
             onClick={toggleTheme}
             aria-label="Đổi giao diện"
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '5px' }}
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+            {theme === 'dark' ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide-sun-icon">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M22 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide-moon-icon">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            )}
           </button>
         </div>
       </div>

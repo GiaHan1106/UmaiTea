@@ -8,7 +8,7 @@ const TOPPINGS = [
   { id: 't_foam', name: 'Kem Creamy Phô Mai', price: 10000 }
 ];
 
-export default function OrderModal({ product, onClose, onAddToCart }) {
+export default function OrderModal({ product, onClose, onOrderDirect }) {
   if (!product) return null;
 
   const [size, setSize] = useState('M'); // 'M' or 'L'
@@ -37,9 +37,9 @@ export default function OrderModal({ product, onClose, onAddToCart }) {
     );
   };
 
-  const handleAddToCart = () => {
+  const handleOrderSubmit = () => {
     const toppingsDetails = selectedToppings.map(id => TOPPINGS.find(t => t.id === id));
-    const cartItem = {
+    const orderItem = {
       id: `${product.id}-${size}-${sugar}-${ice}-${selectedToppings.sort().join('-')}`,
       product,
       name: product.name,
@@ -51,7 +51,7 @@ export default function OrderModal({ product, onClose, onAddToCart }) {
       price: unitPrice,
       totalPrice: unitPrice * qty
     };
-    onAddToCart(cartItem);
+    onOrderDirect(orderItem);
   };
 
   // Format currency in VND
@@ -192,8 +192,8 @@ export default function OrderModal({ product, onClose, onAddToCart }) {
               <div className="modal-price-label">Tổng cộng</div>
               <div className="modal-price-val">{formatPrice(unitPrice * qty)}</div>
             </div>
-            <button className="modal-add-cart-btn" onClick={handleAddToCart}>
-              THÊM VÀO GIỎ HÀNG
+            <button className="modal-add-cart-btn" onClick={handleOrderSubmit}>
+              ĐẶT HÀNG NGAY
             </button>
           </div>
         </div>

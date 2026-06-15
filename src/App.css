@@ -33,7 +33,7 @@
 }
 
 .main-header {
-  padding: 15px 0;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,12 +42,6 @@
 .logo-container {
   display: flex;
   align-items: center;
-  background-color: var(--bg-light); /* Cream background to make the brown logo stand out */
-  padding: 6px 18px;
-  border-radius: 30px; /* Capsule shape */
-  border: 2px solid var(--secondary);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-container:hover {
@@ -57,7 +51,7 @@
 }
 
 .header-logo {
-  height: 38px; /* Standard capsule logo height */
+  height: 50px; /* Standard capsule logo height */
   object-fit: contain;
   display: block;
 }
@@ -238,9 +232,30 @@
   color: #ffffff;
   font-size: 20px;
   margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.theme-toggle-header:hover {
+.theme-toggle-header .lucide-sun-icon {
+  color: #ffb800; /* Glowing yellow/gold sun */
+  filter: drop-shadow(0 0 4px rgba(255, 184, 0, 0.4));
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-header:hover .lucide-sun-icon {
+  color: #ffffff;
+  filter: none;
+}
+
+.theme-toggle-header .lucide-moon-icon {
+  color: rgba(255, 255, 255, 0.85); /* Clean silver-white moon */
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-header:hover .lucide-moon-icon {
   color: var(--secondary);
 }
 
@@ -378,9 +393,9 @@
 .category-tabs-container {
   padding: 40px 0 20px;
   position: sticky;
-  top: 110px;
+  top: 0;
   background-color: var(--bg-body);
-  z-index: 80;
+  z-index: 110;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -1559,10 +1574,17 @@
 
 /* Mobile Responsive Styles (< 768px) */
 @media (max-width: 768px) {
+  .top-bar{
+    display: none !important;
+  }
   .main-header {
     flex-wrap: wrap;
-    padding: 12px 0;
+    padding: 12px;
     gap: 10px;
+  }
+
+  .header-logo {
+    height: 48px;
   }
   
   .search-action-container {
@@ -1618,7 +1640,7 @@
 
   /* Category pills */
   .category-tabs-container {
-    top: 175px; /* Adjust sticky top offset for mobile wrapped header */
+    top: 0;
     padding: 12px 0 8px;
   }
   
@@ -1688,9 +1710,14 @@
   .footer-col-title {
     margin-bottom: 15px;
   }
+ 
 }
 
 @media (max-width: 576px) {
+  
+  .top-bar-content {
+    display: none !important;
+  }
   .hide-for-mobile {
     display: none !important;
   }
