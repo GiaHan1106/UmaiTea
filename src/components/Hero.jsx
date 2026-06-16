@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from 'react';
+import banner1 from '../assets/banner/1.jpg';
+import banner2 from '../assets/banner/2.jpg';
+import banner3 from '../assets/banner/3.jpg';
 
 const slides = [
   {
-    cursive: "Umai Signature Fruit Tea",
-    title: "TRÀ TRÁI CÂY TƯƠI MÁT",
-    desc: "Giải nhiệt ngày hè với sự kết hợp tuyệt vời từ trà hoa lài thượng hạng và trái cây nhiệt đới tươi ngon mát lành.",
-    bgUrl: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=1200",
+    cursive: "Umai Bạc Xỉu",
+    title: "BẠC XỈU",
+    desc: "Sự hòa quyện tuyệt vời giữa hương vị cà phê phin truyền thống và vị sữa béo ngậy ngọt ngào, thơm ngon khó cưỡng.",
+    bgUrl: banner1,
     actionText: "THỬ NGAY CÙNG UMAI",
   },
   {
-    cursive: "Premium Oolong Series",
-    title: "TRÀ SỮA OLONG NGUYÊN LÁ",
+    cursive: "Umai Signature",
+    title: "TRÀ OLONG NGUYÊN LÁ",
     desc: "Vị trà oolong chát nhẹ đượm hương hoa quyện cùng sữa béo thơm vừa vặn, đánh thức mọi giác quan thưởng thức.",
-    bgUrl: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=1200",
+    bgUrl: banner2,
     actionText: "KHÁM PHÁ THỰC ĐƠN",
   },
   {
-    cursive: "Creamy Cheese Foam",
-    title: "ĐỘC ĐÁO LỚP KEM BÉO MỊN",
-    desc: "Trải nghiệm lớp kem mặn phô mai béo mịn sánh đặc phủ dày trên nền trà ô long đậm đà hậu vị ngọt êm dịu.",
-    bgUrl: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&q=80&w=1200",
+    cursive: "100% Matcha Nhật",
+    title: "MATCHA LATTE",
+    desc: "Trải nghiệm lớp Matcha béo mịn sánh đặc phủ dày trên nền sữa beo béo, thơm hương tự nhiên.",
+    bgUrl: banner3,
     actionText: "ĐẶT HÀNG NHANH",
   }
 ];

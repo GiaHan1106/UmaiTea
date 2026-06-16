@@ -262,7 +262,7 @@
 /* Hero Section */
 .hero-slider {
   position: relative;
-  height: 520px;
+  height: 600px;
   overflow: hidden;
   background-color: var(--primary-dark);
 }
@@ -1623,6 +1623,10 @@
   /* Hero Slider mobile adjustments */
   .hero-slider {
     height: 380px;
+  }
+  
+  .hero-bg-image {
+    background-position: right center;
   }
   
   .hero-title {
