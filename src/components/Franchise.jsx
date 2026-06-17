@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function Franchise() {
   const [formData, setFormData] = useState({

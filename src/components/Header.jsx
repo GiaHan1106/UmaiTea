@@ -1,4 +1,3 @@
-import React from 'react';
 import umaiLogo from '../assets/umai-logo.svg';
 
 export default function Header({

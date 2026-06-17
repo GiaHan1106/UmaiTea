@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import qrZalo from '../assets/QRZALO.png';
 
 export default function ReceiptModal({ order, onClose }) {
@@ -12,23 +11,8 @@ export default function ReceiptModal({ order, onClose }) {
     }).format(value);
   };
 
-  // Generate a mock order ID
-  const orderId = React.useMemo(() => {
-    return 'UT-' + Math.floor(100000 + Math.random() * 900000);
-  }, [order]);
-
-  // Current Date and Time
-  const orderTime = React.useMemo(() => {
-    const now = new Date();
-    return now.toLocaleString('vi-VN', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    });
-  }, [order]);
+  const orderId = order.orderId;
+  const orderTime = order.orderTime;
 
   const handlePrint = () => {
     window.print();

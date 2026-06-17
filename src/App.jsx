@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import ProductCard from './components/ProductCard.jsx';
@@ -17,7 +17,6 @@ export default function App() {
   const [theme, setTheme] = useState('light');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
-  const [checkoutSuccess, setCheckoutSuccess] = useState(false);
   const [currentOrder, setCurrentOrder] = useState(null);
 
   // Sync theme to root element

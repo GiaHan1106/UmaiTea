@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const TOPPINGS = [
   { id: 't_black', name: 'Trân Châu Đen', price: 6000 },
@@ -9,27 +9,21 @@ const TOPPINGS = [
 ];
 
 export default function OrderModal({ product, onClose, onOrderDirect }) {
-  if (!product) return null;
-
   const [size, setSize] = useState('M'); // 'M' or 'L'
   const [sugar, setSugar] = useState('100%');
   const [ice, setIce] = useState('100%');
   const [selectedToppings, setSelectedToppings] = useState([]);
   const [qty, setQty] = useState(1);
-  const [unitPrice, setUnitPrice] = useState(product.price);
 
-  // Re-calculate unit price when selections change
-  useEffect(() => {
-    let price = product.price;
-    if (size === 'L') {
-      price += 6000;
-    }
-    const toppingsCost = selectedToppings.reduce((total, id) => {
-      const topping = TOPPINGS.find(t => t.id === id);
-      return total + (topping ? topping.price : 0);
-    }, 0);
-    setUnitPrice(price + toppingsCost);
-  }, [size, selectedToppings, product.price]);
+  if (!product) return null;
+
+  const toppingsCost = selectedToppings.reduce((total, id) => {
+    const topping = TOPPINGS.find(t => t.id === id);
+    return total + (topping ? topping.price : 0);
+  }, 0);
+  const basePrice = product.price;
+  const sizeCost = size === 'L' ? 6000 : 0;
+  const unitPrice = basePrice + sizeCost + toppingsCost;
 
   const handleToppingToggle = (id) => {
     setSelectedToppings(prev =>
@@ -41,6 +35,15 @@ export default function OrderModal({ product, onClose, onOrderDirect }) {
     const toppingsDetails = selectedToppings.map(id => TOPPINGS.find(t => t.id === id));
     const orderItem = {
       id: `${product.id}-${size}-${sugar}-${ice}-${selectedToppings.sort().join('-')}`,
+      orderId: 'UT-' + Math.floor(100000 + Math.random() * 900000),
+      orderTime: new Date().toLocaleString('vi-VN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      }),
       product,
       name: product.name,
       size,
