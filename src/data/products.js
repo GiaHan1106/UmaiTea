@@ -8,7 +8,7 @@ import imgColdWhisk from '../assets/COFFE & MATCHA/COLDWHISK.svg';
 import imgCaPheMuoi from '../assets/COFFE & MATCHA/CÀPHÊMUỐI.svg';
 import imgCaPheDen from '../assets/COFFE & MATCHA/CÀPHÊĐEN.svg';
 import imgCaPheSua from '../assets/COFFE & MATCHA/CÀPHẾSỮA.svg';
-import imgCaPheSuaTuoiSuongSao from '../assets/COFFE & MATCHA/CÀPHÊSỮATƯƠISƯƠNGSÁO.svg';
+import imgCaPheSuaTuoiSuongSao from '../assets/COFFE & MATCHA/CÀPHÊSỮATƯƠISƯƠNGSÁO.svg';
 import imgMatchaCoco from '../assets/COFFE & MATCHA/MATCHACOCO.svg';
 import imgMatchaDau from '../assets/COFFE & MATCHA/MATCHADÂU.svg';
 import imgMatchaLatte from '../assets/COFFE & MATCHA/MATCHALATTE.svg';
@@ -25,8 +25,8 @@ import imgTraThaoMocRungThong from '../assets/FRUIT/TRÀTHẢOMỘCRỪNGTHÔNG.
 import imgTraVaiHuongHoa from '../assets/FRUIT/TRÀVẢIHƯƠNGHOA.svg';
 
 // Milk Tea
-import imgOlongLaiSuaTranChauTra from '../assets/MILKTEA/OLONGLÀISỮATRÂNCHÂUTRÀ.svg';
-import imgTraSuaOlongSen from '../assets/MILKTEA/TRÀSỮAOLONGSEN.svg';
+import imgOlongLaiSuaTranChauTra from '../assets/MILKTEA/OLONGLÀISỮATRÂNCHÂUTRÀ.svg';
+import imgTraSuaOlongSen from '../assets/MILKTEA/TRÀSỮAOLONGSEN.svg';
 
 export const PRODUCTS = [
   // --- FRUIT TEA ---
