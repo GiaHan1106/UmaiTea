@@ -28,6 +28,27 @@ export default function Franchise() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
+      const budgetText = {
+        under500: 'Dưới 500 triệu VND',
+        '500to1b': '500 triệu - 1 tỷ VND',
+        '1bto2b': '1 tỷ - 2 tỷ VND',
+        above2b: 'Trên 2 tỷ VND'
+      }[formData.budget] || formData.budget;
+
+      const subject = `ĐĂNG KÝ NHƯỢNG QUYỀN UMAITEA - Đối tác: ${formData.fullName}`;
+      const body = `Kính gửi Ban quản trị UmaiTea,\n\nTôi muốn đăng ký nhận tư vấn nhượng quyền thương hiệu với thông tin chi tiết dưới đây:\n\n` +
+                   `- Họ và Tên: ${formData.fullName}\n` +
+                   `- Số điện thoại: ${formData.phone}\n` +
+                   `- Khu vực dự kiến: ${formData.city}\n` +
+                   `- Ngân sách đầu tư: ${budgetText}\n` +
+                   `- Ghi chú / Yêu cầu thêm: ${formData.message || 'Không có'}\n\n` +
+                   `Trân trọng!`;
+
+      const mailtoUrl = `mailto:hgia11062001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open user's email client
+      window.location.href = mailtoUrl;
+
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
@@ -88,7 +109,7 @@ export default function Franchise() {
 
             {submitted ? (
               <div className="form-success-alert">
-                🎉 Đăng ký thành công! Đội ngũ tư vấn nhượng quyền của UmaiTea sẽ liên hệ với quý đối tác trong vòng 24h làm việc qua số điện thoại cung cấp. Xin cảm ơn!
+                🎉 Đăng ký thành công! Đơn đăng ký nhượng quyền đã được chuẩn bị và chuyển tiếp tới hgia11062001@gmail.com. Đội ngũ UmaiTea sẽ liên hệ với quý đối tác trong vòng 24h làm việc. Xin cảm ơn!
               </div>
             ) : null}
 

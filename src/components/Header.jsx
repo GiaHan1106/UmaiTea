@@ -44,12 +44,10 @@ export default function Header({
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
               <option value="ALL">Tất cả</option>
-              <option value="FRUIT TEA">FRUIT TEA</option>
-              <option value="MILK TEA">MILK TEA</option>
-              <option value="CREAMY">CREAMY</option>
-              <option value="COFFEE">COFFEE</option>
-              <option value="TOPPING">TOPPING</option>
-              <option value="SNACK">ĂN VẶT</option>
+              <option value="FRUIT TEA">Trà trái cây</option>
+              <option value="MILK TEA">Trà sữa</option>
+              <option value="MATCHA">Matcha</option>
+              <option value="COFFEE">Coffee</option>
             </select>
             <input
               type="text"
@@ -59,7 +57,6 @@ export default function Header({
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button type="submit" className="search-btn" aria-label="Tìm kiếm">
-              🔍
             </button>
           </div>
         </form>

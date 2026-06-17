@@ -1670,6 +1670,7 @@
   .product-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
+    padding: 15px;
   }
   
   .product-info {
@@ -1724,6 +1725,404 @@
   }
   .hide-for-mobile {
     display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Receipt Modal & Zalo QR Order Flow Styles
+   ========================================================================== */
+.receipt-modal-container {
+  background-color: var(--bg-card);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: scaleUp 0.3s ease forwards;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.receipt-modal-content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.receipt-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .receipt-modal-grid {
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+/* Receipt paper styling (thermal receipt effect) */
+.receipt-paper-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.receipt-paper {
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  position: relative;
+  font-family: 'Courier New', Courier, monospace;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* Zigzag edge on thermal receipt */
+.receipt-paper::before,
+.receipt-paper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-size: 16px 8px;
+}
+
+.receipt-paper::before {
+  top: -8px;
+  background-image: linear-gradient(135deg, var(--bg-card) 25%, transparent 25%), 
+                    linear-gradient(225deg, var(--bg-card) 25%, transparent 25%);
+}
+
+.receipt-paper::after {
+  bottom: -8px;
+  background-image: linear-gradient(45deg, var(--bg-card) 25%, transparent 25%), 
+                    linear-gradient(-45deg, var(--bg-card) 25%, transparent 25%);
+}
+
+.receipt-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.receipt-brand {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 4px;
+  color: #000000;
+}
+
+.receipt-shop-info {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #555555;
+  text-transform: uppercase;
+}
+
+.receipt-shop-detail {
+  font-size: 10px;
+  margin: 0;
+  color: #666666;
+}
+
+.receipt-divider {
+  border-top: 1px dashed #444444;
+  margin: 15px 0;
+}
+
+.receipt-meta {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.receipt-items-list {
+  font-size: 11px;
+  color: #1a1a1a;
+}
+
+.receipt-item-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.receipt-item-row.header {
+  font-weight: 700;
+  border-bottom: 1px dashed #777777;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+
+.receipt-item-name {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.receipt-item-qty {
+  width: 40px;
+  text-align: center;
+}
+
+.receipt-item-price {
+  width: 100px;
+  text-align: right;
+}
+
+.receipt-item-options {
+  font-size: 10px;
+  color: #555555;
+  padding-left: 10px;
+  margin-top: -4px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.receipt-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 15px;
+  color: #000000;
+}
+
+.receipt-total-label {
+  letter-spacing: 1px;
+}
+
+.receipt-footer {
+  text-align: center;
+  font-size: 10px;
+  color: #555555;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.receipt-footer p {
+  margin: 4px 0;
+}
+
+.receipt-actions {
+  margin-top: 25px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.receipt-action-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.receipt-action-btn.print-btn {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: 1px solid var(--primary);
+}
+
+.receipt-action-btn.print-btn:hover {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .receipt-action-btn.print-btn {
+  background-color: var(--secondary);
+  color: var(--primary-dark);
+  border-color: var(--secondary);
+}
+
+[data-theme="dark"] .receipt-action-btn.print-btn:hover {
+  background-color: transparent;
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* Zalo QR column styling */
+.zalo-qr-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.zalo-qr-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="dark"] .zalo-qr-title {
+  color: var(--secondary);
+}
+
+.zalo-qr-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 400px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.zalo-qr-wrapper {
+  margin-bottom: 25px;
+}
+
+.zalo-qr-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border: 4px solid var(--secondary);
+  border-radius: 16px;
+  padding: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.zalo-qr-container:hover {
+  transform: scale(1.03);
+}
+
+.zalo-qr-image {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Laser/Scanning Line effect */
+.zalo-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 0, 0, 0.75);
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.9), 0 0 15px rgba(255, 0, 0, 0.4);
+  animation: scanZaloQR 2.8s linear infinite;
+  z-index: 10;
+}
+
+@keyframes scanZaloQR {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+.zalo-steps {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  background: rgba(var(--primary-rgb), 0.04);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.zalo-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.zalo-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .zalo-step-num {
+  background-color: var(--secondary);
+  color: var(--primary-dark);
+}
+
+.zalo-action-btn {
+  background-color: #0068ff; /* Zalo Blue */
+  color: #ffffff;
+  border: 1px solid #0068ff;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 13.5px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 104, 255, 0.3);
+  cursor: pointer;
+}
+
+.zalo-action-btn:hover {
+  background-color: #0056d6;
+  border-color: #0056d6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 104, 255, 0.4);
+}
+
+/* Print Specific Rules */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .receipt-paper, .receipt-paper * {
+    visibility: visible !important;
+  }
+  .receipt-paper {
+    position: absolute;
+    left: 50% !important;
+    top: 20px !important;
+    transform: translateX(-50%) !important;
+    width: 320px !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  /* Ensure backgrounds render when printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 

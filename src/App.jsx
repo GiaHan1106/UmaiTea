@@ -7,6 +7,7 @@ import StoreLocator from './components/StoreLocator.jsx';
 import Franchise from './components/Franchise.jsx';
 import BlogSection from './components/BlogSection.jsx';
 import Footer from './components/Footer.jsx';
+import ReceiptModal from './components/ReceiptModal.jsx';
 import { PRODUCTS } from './data/products.js';
 import './App.css';
 
@@ -17,6 +18,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
+  const [currentOrder, setCurrentOrder] = useState(null);
 
   // Sync theme to root element
   useEffect(() => {
@@ -29,10 +31,7 @@ export default function App() {
 
   const handleOrderDirect = (orderItem) => {
     setSelectedProduct(null);
-    setCheckoutSuccess(true);
-    setTimeout(() => {
-      setCheckoutSuccess(false);
-    }, 4000);
+    setCurrentOrder(orderItem);
   };
 
   // Filtering products for the MENU page
@@ -135,12 +134,10 @@ export default function App() {
               <div className="category-tabs">
                 {[
                   { key: 'ALL', name: 'Tất cả' },
-                  { key: 'FRUIT TEA', name: 'Fruit Tea' },
-                  { key: 'MILK TEA', name: 'Milk Tea' },
-                  { key: 'CREAMY', name: 'Creamy' },
-                  { key: 'COFFEE', name: 'Coffee' },
-                  { key: 'TOPPING', name: 'Toppings' },
-                  { key: 'SNACK', name: 'Ăn vặt' }
+                  { key: 'FRUIT TEA', name: 'Trà trái cây' },
+                  { key: 'MILK TEA', name: 'Trà sữa' },
+                  { key: 'MATCHA', name: 'Matcha' },
+                  { key: 'COFFEE', name: 'Coffee' }
                 ].map(cat => (
                   <button
                     key={cat.key}
@@ -204,15 +201,12 @@ export default function App() {
         />
       )}
 
-      {/* Confetti Checkout Success Alert */}
-      {checkoutSuccess && (
-        <div className="confetti-celebration">
-          <div className="confetti-box">
-            <span className="confetti-icon">🎉</span>
-            <h3 className="confetti-title">ĐẶT HÀNG THÀNH CÔNG!</h3>
-            <p className="confetti-desc">Đơn hàng của bạn đã được gửi thành công. UmaiTea sẽ liên hệ để giao hàng sớm nhất.</p>
-          </div>
-        </div>
+      {/* Receipt & Zalo QR Scan Modal */}
+      {currentOrder && (
+        <ReceiptModal
+          order={currentOrder}
+          onClose={() => setCurrentOrder(null)}
+        />
       )}
     </>
   );
