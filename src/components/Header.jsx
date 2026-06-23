@@ -47,6 +47,7 @@ export default function Header({
               <option value="MILK TEA">Trà sữa</option>
               <option value="MATCHA">Matcha</option>
               <option value="COFFEE">Coffee</option>
+              <option value="TOPPING">Topping</option>
             </select>
             <input
               type="text"

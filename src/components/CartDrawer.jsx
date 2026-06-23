@@ -65,7 +65,11 @@ export default function CartDrawer({
                   <div className="cart-item-details">
                     <h4 className="cart-item-name">{item.name}</h4>
                     <p className="cart-item-spec">
-                      Size: {item.size} | Đá: {item.ice} | Đường: {item.sugar}
+                      {item.product.category === 'TOPPING' ? (
+                        'Topping thêm'
+                      ) : (
+                        `Size: ${item.size} | Đá: ${item.ice} | Đường: ${item.sugar}`
+                      )}
                       {item.toppings.length > 0 && (
                         <>
                           <br />

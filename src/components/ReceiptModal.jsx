@@ -62,9 +62,9 @@ export default function ReceiptModal({ order, onClose }) {
                   </div>
 
                   <div className="receipt-item-options">
-                    <div>- Cỡ: Size {order.size}</div>
-                    <div>- Đường: {order.sugar}</div>
-                    <div>- Đá: {order.ice}</div>
+                    {order.size && <div>- Cỡ: Size {order.size}</div>}
+                    {order.sugar && <div>- Đường: {order.sugar}</div>}
+                    {order.ice && <div>- Đá: {order.ice}</div>}
                     {order.toppings && order.toppings.length > 0 && (
                       <div>
                         - Topping: {order.toppings.map(t => t.name).join(', ')}

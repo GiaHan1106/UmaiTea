@@ -136,7 +136,8 @@ export default function App() {
                   { key: 'FRUIT TEA', name: 'Trà trái cây' },
                   { key: 'MILK TEA', name: 'Trà sữa' },
                   { key: 'MATCHA', name: 'Matcha' },
-                  { key: 'COFFEE', name: 'Coffee' }
+                  { key: 'COFFEE', name: 'Coffee' },
+                  { key: 'TOPPING', name: 'Topping' }
                 ].map(cat => (
                   <button
                     key={cat.key}

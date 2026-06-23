@@ -1,32 +1,50 @@
 // --- IMPORT ASSETS ---
 // Common Fallback Image
-import imgChung from '../assets/MILKTEA/CHUNG.svg';
+import imgChung from '../assets/MILKTEA/CHUNG.png';
 
 // Coffee & Matcha
-import imgBacXiu from '../assets/COFFE & MATCHA/BẠCXĨU.svg';
-import imgColdWhisk from '../assets/COFFE & MATCHA/COLDWHISK.svg';
-import imgCaPheMuoi from '../assets/COFFE & MATCHA/CÀPHÊMUỐI.svg';
-import imgCaPheDen from '../assets/COFFE & MATCHA/CÀPHÊĐEN.svg';
-import imgCaPheSua from '../assets/COFFE & MATCHA/CÀPHẾSỮA.svg';
+import imgBacXiu from '../assets/COFFE & MATCHA/BẠCXĨU.png';
+import imgColdWhisk from '../assets/COFFE & MATCHA/COLDWHISK.png';
+import imgCaPheMuoi from '../assets/COFFE & MATCHA/CÀPHÊMUỐI.png';
+import imgCaPheDen from '../assets/COFFE & MATCHA/CÀPHÊĐEN.png';
+import imgCaPheSua from '../assets/COFFE & MATCHA/CÀPHÊSỮA.png';
 import imgCaPheSuaTuoiSuongSao from '../assets/COFFE & MATCHA/CÀPHÊSỮATƯƠISƯƠNGSÁO.svg';
-import imgMatchaCoco from '../assets/COFFE & MATCHA/MATCHACOCO.svg';
-import imgMatchaDau from '../assets/COFFE & MATCHA/MATCHADÂU.svg';
-import imgMatchaLatte from '../assets/COFFE & MATCHA/MATCHALATTE.svg';
-import imgMatchaXoai from '../assets/COFFE & MATCHA/MATCHAXOÀI.svg';
+import imgMatchaCoco from '../assets/COFFE & MATCHA/MATCHACOCO.png';
+import imgMatchaDau from '../assets/COFFE & MATCHA/MATCHADÂU.png';
+import imgMatchaLatte from '../assets/COFFE & MATCHA/MATCHALATTE.png';
+import imgMatchaXoai from '../assets/COFFE & MATCHA/MATCHAXOÀI.png';
 
 // Fruit Tea
-import imgCamDaoBonMua from '../assets/FRUIT/CAMĐÀOBỐNMÙA.svg';
-import imgLongNhanHuongHoa from '../assets/FRUIT/LONGNHÃNHƯƠNGHOA.svg';
-import imgLuuDoNhaDam from '../assets/FRUIT/LỰUĐỎNHAĐAM.svg';
-import imgTraBuoiHongMo from '../assets/FRUIT/TRÀBƯỞIHỒNGMƠ.svg';
-import imgTraKimQuat from '../assets/FRUIT/TRÀKIMQUẤT.svg';
-import imgTraLaiDacThom from '../assets/FRUIT/TRÀLÀIĐÁCTHƠM .svg';
-import imgTraThaoMocRungThong from '../assets/FRUIT/TRÀTHẢOMỘCRỪNGTHÔNG.svg';
-import imgTraVaiHuongHoa from '../assets/FRUIT/TRÀVẢIHƯƠNGHOA.svg';
+import imgCamDaoBonMua from '../assets/FRUIT/CAMĐÀOBỐNMÙA.png';
+import imgLongNhanHuongHoa from '../assets/FRUIT/LONGNHÃNHƯƠNGHOA.png';
+import imgLuuDoNhaDam from '../assets/FRUIT/LỰUĐỎNHAĐAM.png';
+import imgTraBuoiHongMo from '../assets/FRUIT/TRÀBƯỞIHỒNGMƠ.png';
+import imgTraKimQuat from '../assets/FRUIT/TRÀKIMQUẤT.png';
+import imgTraLaiDacThom from '../assets/FRUIT/TRÀLÀIĐÁCTHƠM.png';
+import imgTraThaoMocRungThong from '../assets/FRUIT/TRÀTHẢOMỘCRỪNGTHÔNG.png';
+import imgTraVaiHuongHoa from '../assets/FRUIT/TRÀVẢIHƯƠNGHOA.png';
 
 // Milk Tea
-import imgOlongLaiSuaTranChauTra from '../assets/MILKTEA/OLONGLÀISỮATRÂNCHÂUTRÀ.svg';
-import imgTraSuaOlongSen from '../assets/MILKTEA/TRÀSỮAOLONGSEN.svg';
+import imgOlongLaiSuaTranChauTra from '../assets/MILKTEA/OLONGLÀISỮATRÂNCHÂUTRÀ.png';
+import imgTraSuaOlongSen from '../assets/MILKTEA/TRÀSỮAOLONGSEN.png';
+
+// Toppings
+import imgBuoiMieng from '../assets/TOPPING/BuoiMieng.png';
+import imgCheeseBall from '../assets/TOPPING/CheeseBall.png';
+import imgDaoMieng from '../assets/TOPPING/DaoMieng.png';
+import imgHatDacRim from '../assets/TOPPING/HatDacRim.png';
+import imgHatSen from '../assets/TOPPING/HatSen.png';
+import imgNhaDam from '../assets/TOPPING/NhaDam.png';
+import imgThachPhoMai from '../assets/TOPPING/ThachPhoMai.png';
+import imgThachPhoMaiQueHoa from '../assets/TOPPING/ThachPhoMaiQueHoa.png';
+import imgThachQueHoa from '../assets/TOPPING/ThachQueHoa.png';
+import imgTraiNhan from '../assets/TOPPING/TraiNhan.png';
+import imgTraiVai from '../assets/TOPPING/TraiVai.png';
+import imgTranChauHoangKim from '../assets/TOPPING/TranChauHoangKim.png';
+import imgTranChauKhoaiMon from '../assets/TOPPING/TranChauKhoaiMon.png';
+import imgTranChauOlong from '../assets/TOPPING/TranChauOlong.png';
+import imgTranChauTra from '../assets/TOPPING/TranChauTra.png';
+import imgTranChauTrang from '../assets/TOPPING/TranChauTrang.png';
 
 export const PRODUCTS = [
   // --- FRUIT TEA ---
@@ -314,5 +332,151 @@ export const PRODUCTS = [
     badge: 'NEW',
     description: 'Cà phê sữa tươi thơm ngậy kết hợp cùng thạch sương sáo thanh mát nhai vui miệng.',
     image: imgCaPheSuaTuoiSuongSao
+  },
+
+  // --- TOPPING ---
+  {
+    id: 't_white_pearl',
+    category: 'TOPPING',
+    name: 'Trân Châu Trắng',
+    price: 7000,
+    badge: 'BEST',
+    description: 'Trân châu trắng giòn sần sật, ngọt nhẹ thanh mát.',
+    image: imgTranChauTrang
+  },
+  {
+    id: 't_gold_pearl',
+    category: 'TOPPING',
+    name: 'Trân Châu Hoàng Kim',
+    price: 7000,
+    badge: '',
+    description: 'Trân châu hoàng kim dẻo mềm, thơm lừng vị đường đen.',
+    image: imgTranChauHoangKim
+  },
+  {
+    id: 't_taro_pearl',
+    category: 'TOPPING',
+    name: 'Trân Châu Khoai Môn',
+    price: 8000,
+    badge: 'NEW',
+    description: 'Trân châu làm từ khoai môn tự nhiên thơm bùi đặc trưng.',
+    image: imgTranChauKhoaiMon
+  },
+  {
+    id: 't_olong_pearl',
+    category: 'TOPPING',
+    name: 'Trân Châu Ô Long',
+    price: 8000,
+    badge: '',
+    description: 'Trân châu đậm vị trà ô long, thơm nhẹ hậu vị.',
+    image: imgTranChauOlong
+  },
+  {
+    id: 't_tea_pearl',
+    category: 'TOPPING',
+    name: 'Trân Châu Trà',
+    price: 7000,
+    badge: '',
+    description: 'Trân châu dai giòn đậm đà hương vị trà xanh tươi mát.',
+    image: imgTranChauTra
+  },
+  {
+    id: 't_cheese_jelly',
+    category: 'TOPPING',
+    name: 'Thạch Phô Mai',
+    price: 9000,
+    badge: 'BEST',
+    description: 'Thạch rau câu giòn ngọt bọc viên nhân phô mai béo ngậy bên trong.',
+    image: imgThachPhoMai
+  },
+  {
+    id: 't_osmanthus_cheese_jelly',
+    category: 'TOPPING',
+    name: 'Thạch Phô Mai Quế Hoa',
+    price: 10000,
+    badge: 'NEW',
+    description: 'Sự kết hợp tinh tế giữa quế hoa thơm ngát và nhân phô mai béo ngậy.',
+    image: imgThachPhoMaiQueHoa
+  },
+  {
+    id: 't_osmanthus_jelly',
+    category: 'TOPPING',
+    name: 'Thạch Quế Hoa',
+    price: 8000,
+    badge: '',
+    description: 'Thạch làm từ hoa mộc tê (quế hoa) thơm ngọt tự nhiên thanh lọc.',
+    image: imgThachQueHoa
+  },
+  {
+    id: 't_cheese_ball',
+    category: 'TOPPING',
+    name: 'Cheese Ball',
+    price: 10000,
+    badge: 'HOT',
+    description: 'Viên phô mai tròn mềm béo ngậy, tan chảy ngay trong miệng.',
+    image: imgCheeseBall
+  },
+  {
+    id: 't_aloe_vera',
+    category: 'TOPPING',
+    name: 'Nha Đam',
+    price: 7000,
+    badge: '',
+    description: 'Nha đam cắt hạt lựu giòn ngọt, giàu vitamin tốt cho sức khỏe.',
+    image: imgNhaDam
+  },
+  {
+    id: 't_sweet_palm_seed',
+    category: 'TOPPING',
+    name: 'Hạt Đác Rim',
+    price: 8000,
+    badge: '',
+    description: 'Hạt đác tự nhiên rim đường phèn giòn sần sật ngọt dịu.',
+    image: imgHatDacRim
+  },
+  {
+    id: 't_lotus_seed',
+    category: 'TOPPING',
+    name: 'Hạt Sen',
+    price: 9000,
+    badge: '',
+    description: 'Hạt sen tươi ninh nhừ bùi béo, thơm mát bổ dưỡng.',
+    image: imgHatSen
+  },
+  {
+    id: 't_peach_slice',
+    category: 'TOPPING',
+    name: 'Đào Miếng',
+    price: 9000,
+    badge: '',
+    description: 'Đào ngâm giòn ngọt, vàng ruộm mọng nước.',
+    image: imgDaoMieng
+  },
+  {
+    id: 't_grapefruit_slice',
+    category: 'TOPPING',
+    name: 'Bưởi Miếng',
+    price: 8000,
+    badge: '',
+    description: 'Múi bưởi hồng tươi chín mọng vị chua ngọt thanh mát.',
+    image: imgBuoiMieng
+  },
+  {
+    id: 't_longan',
+    category: 'TOPPING',
+    name: 'Trái Nhãn',
+    price: 9000,
+    badge: '',
+    description: 'Cơm nhãn xuồng dày, ngọt lịm mọng nước.',
+    image: imgTraiNhan
+  },
+  {
+    id: 't_lychee',
+    category: 'TOPPING',
+    name: 'Trái Vải',
+    price: 9000,
+    badge: '',
+    description: 'Trái vải thiều chín mọng thơm nức ngọt ngào.',
+    image: imgTraiVai
   }
 ];
