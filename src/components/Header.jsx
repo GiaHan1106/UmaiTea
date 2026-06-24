@@ -43,8 +43,8 @@ export default function Header({
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
               <option value="ALL">Tất cả</option>
-              <option value="FRUIT TEA">Trà trái cây</option>
               <option value="MILK TEA">Trà sữa</option>
+              <option value="FRUIT TEA">Trà trái cây</option>
               <option value="MATCHA">Matcha</option>
               <option value="COFFEE">Coffee</option>
               <option value="TOPPING">Topping</option>

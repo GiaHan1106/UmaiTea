@@ -133,8 +133,8 @@ export default function App() {
               <div className="category-tabs">
                 {[
                   { key: 'ALL', name: 'Tất cả' },
-                  { key: 'FRUIT TEA', name: 'Trà trái cây' },
                   { key: 'MILK TEA', name: 'Trà sữa' },
+                  { key: 'FRUIT TEA', name: 'Trà trái cây' },
                   { key: 'MATCHA', name: 'Matcha' },
                   { key: 'COFFEE', name: 'Coffee' },
                   { key: 'TOPPING', name: 'Topping' }

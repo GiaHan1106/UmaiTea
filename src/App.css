@@ -2119,3 +2119,21 @@
   }
 }
 
+/* Skeleton Loading Pulse for Images */
+@keyframes placeholderPulse {
+  0% {
+    background-color: #eae7db;
+  }
+  50% {
+    background-color: #e2decb;
+  }
+  100% {
+    background-color: #eae7db;
+  }
+}
+
+.placeholder-pulse {
+  animation: placeholderPulse 1.8s infinite ease-in-out;
+}
+
+

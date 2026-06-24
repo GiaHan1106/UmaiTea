@@ -1,50 +1,50 @@
 // --- IMPORT ASSETS ---
 // Common Fallback Image
-import imgChung from '../assets/MILKTEA/CHUNG.png';
+import imgChung from '../assets/MILKTEA/CHUNG.svg';
 
 // Coffee & Matcha
-import imgBacXiu from '../assets/COFFE & MATCHA/BẠCXĨU.png';
-import imgColdWhisk from '../assets/COFFE & MATCHA/COLDWHISK.png';
-import imgCaPheMuoi from '../assets/COFFE & MATCHA/CÀPHÊMUỐI.png';
-import imgCaPheDen from '../assets/COFFE & MATCHA/CÀPHÊĐEN.png';
-import imgCaPheSua from '../assets/COFFE & MATCHA/CÀPHÊSỮA.png';
+import imgBacXiu from '../assets/COFFE & MATCHA/BẠCXĨU.svg';
+import imgColdWhisk from '../assets/COFFE & MATCHA/COLDWHISK.svg';
+import imgCaPheMuoi from '../assets/COFFE & MATCHA/CÀPHÊMUỐI.svg';
+import imgCaPheDen from '../assets/COFFE & MATCHA/CÀPHÊĐEN.svg';
+import imgCaPheSua from '../assets/COFFE & MATCHA/CÀPHÊSỮA.svg';
 import imgCaPheSuaTuoiSuongSao from '../assets/COFFE & MATCHA/CÀPHÊSỮATƯƠISƯƠNGSÁO.svg';
-import imgMatchaCoco from '../assets/COFFE & MATCHA/MATCHACOCO.png';
-import imgMatchaDau from '../assets/COFFE & MATCHA/MATCHADÂU.png';
-import imgMatchaLatte from '../assets/COFFE & MATCHA/MATCHALATTE.png';
-import imgMatchaXoai from '../assets/COFFE & MATCHA/MATCHAXOÀI.png';
+import imgMatchaCoco from '../assets/COFFE & MATCHA/MATCHACOCO.svg';
+import imgMatchaDau from '../assets/COFFE & MATCHA/MATCHADÂU.svg';
+import imgMatchaLatte from '../assets/COFFE & MATCHA/MATCHALATTE.svg';
+import imgMatchaXoai from '../assets/COFFE & MATCHA/MATCHAXOÀI.svg';
 
 // Fruit Tea
-import imgCamDaoBonMua from '../assets/FRUIT/CAMĐÀOBỐNMÙA.png';
-import imgLongNhanHuongHoa from '../assets/FRUIT/LONGNHÃNHƯƠNGHOA.png';
-import imgLuuDoNhaDam from '../assets/FRUIT/LỰUĐỎNHAĐAM.png';
-import imgTraBuoiHongMo from '../assets/FRUIT/TRÀBƯỞIHỒNGMƠ.png';
-import imgTraKimQuat from '../assets/FRUIT/TRÀKIMQUẤT.png';
-import imgTraLaiDacThom from '../assets/FRUIT/TRÀLÀIĐÁCTHƠM.png';
-import imgTraThaoMocRungThong from '../assets/FRUIT/TRÀTHẢOMỘCRỪNGTHÔNG.png';
-import imgTraVaiHuongHoa from '../assets/FRUIT/TRÀVẢIHƯƠNGHOA.png';
+import imgCamDaoBonMua from '../assets/FRUIT/CAMĐÀOBỐNMÙA.svg';
+import imgLongNhanHuongHoa from '../assets/FRUIT/LONGNHÃNHƯƠNGHOA.svg';
+import imgLuuDoNhaDam from '../assets/FRUIT/LỰUĐỎNHAĐAM.svg';
+import imgTraBuoiHongMo from '../assets/FRUIT/TRÀBƯỞIHỒNGMƠ.svg';
+import imgTraKimQuat from '../assets/FRUIT/TRÀKIMQUẤT.svg';
+import imgTraLaiDacThom from '../assets/FRUIT/TRÀLÀIĐÁCTHƠM.svg';
+import imgTraThaoMocRungThong from '../assets/FRUIT/TRÀTHẢOMỘCRỪNGTHÔNG.svg';
+import imgTraVaiHuongHoa from '../assets/FRUIT/TRÀVẢIHƯƠNGHOA.svg';
 
 // Milk Tea
-import imgOlongLaiSuaTranChauTra from '../assets/MILKTEA/OLONGLÀISỮATRÂNCHÂUTRÀ.png';
-import imgTraSuaOlongSen from '../assets/MILKTEA/TRÀSỮAOLONGSEN.png';
+import imgOlongLaiSuaTranChauTra from '../assets/MILKTEA/OLONGLÀISỮATRÂNCHÂUTRÀ.svg';
+import imgTraSuaOlongSen from '../assets/MILKTEA/TRÀSỮAOLONGSEN.svg';
 
 // Toppings
-import imgBuoiMieng from '../assets/TOPPING/BuoiMieng.png';
-import imgCheeseBall from '../assets/TOPPING/CheeseBall.png';
-import imgDaoMieng from '../assets/TOPPING/DaoMieng.png';
-import imgHatDacRim from '../assets/TOPPING/HatDacRim.png';
-import imgHatSen from '../assets/TOPPING/HatSen.png';
-import imgNhaDam from '../assets/TOPPING/NhaDam.png';
-import imgThachPhoMai from '../assets/TOPPING/ThachPhoMai.png';
-import imgThachPhoMaiQueHoa from '../assets/TOPPING/ThachPhoMaiQueHoa.png';
-import imgThachQueHoa from '../assets/TOPPING/ThachQueHoa.png';
-import imgTraiNhan from '../assets/TOPPING/TraiNhan.png';
-import imgTraiVai from '../assets/TOPPING/TraiVai.png';
-import imgTranChauHoangKim from '../assets/TOPPING/TranChauHoangKim.png';
-import imgTranChauKhoaiMon from '../assets/TOPPING/TranChauKhoaiMon.png';
-import imgTranChauOlong from '../assets/TOPPING/TranChauOlong.png';
-import imgTranChauTra from '../assets/TOPPING/TranChauTra.png';
-import imgTranChauTrang from '../assets/TOPPING/TranChauTrang.png';
+import imgBuoiMieng from '../assets/TOPPING/BuoiMieng.svg';
+import imgCheeseBall from '../assets/TOPPING/CheeseBall.svg';
+import imgDaoMieng from '../assets/TOPPING/DaoMieng.svg';
+import imgHatDacRim from '../assets/TOPPING/HatDacRim.svg';
+import imgHatSen from '../assets/TOPPING/HatSen.svg';
+import imgNhaDam from '../assets/TOPPING/NhaDam.svg';
+import imgThachPhoMai from '../assets/TOPPING/ThachPhoMai.svg';
+import imgThachPhoMaiQueHoa from '../assets/TOPPING/ThachPhoMaiQueHoa.svg';
+import imgThachQueHoa from '../assets/TOPPING/ThachQueHoa.svg';
+import imgTraiNhan from '../assets/TOPPING/TraiNhan.svg';
+import imgTraiVai from '../assets/TOPPING/TraiVai.svg';
+import imgTranChauHoangKim from '../assets/TOPPING/TranChauHoangKim.svg';
+import imgTranChauKhoaiMon from '../assets/TOPPING/TranChauKhoaiMon.svg';
+import imgTranChauOlong from '../assets/TOPPING/TranChauOlong.svg';
+import imgTranChauTra from '../assets/TOPPING/TranChauTra.svg';
+import imgTranChauTrang from '../assets/TOPPING/TranChauTrang.svg';
 
 export const PRODUCTS = [
   // --- FRUIT TEA ---
