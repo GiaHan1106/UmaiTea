@@ -52,7 +52,7 @@ export default function Header({
             <input
               type="text"
               className="search-input"
-              placeholder="Bạn cần tìm trà gì?..."
+              placeholder="Tìm hương vị trà bạn yêu thích..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />

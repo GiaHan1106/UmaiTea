@@ -53,7 +53,7 @@ export const PRODUCTS = [
     category: 'FRUIT TEA',
     name: 'TRÀ KIM QUẤT',
     price: 39000,
-    badge: 'HOT',
+    badge: '',
     description: 'Sự kết hợp hoàn hảo giữa trà hoa lài thanh mát và vị chua dịu thơm đặc trưng của kim quất tươi.',
     image: imgTraKimQuat
   },
@@ -71,7 +71,7 @@ export const PRODUCTS = [
     category: 'FRUIT TEA',
     name: 'LONG NHÃN HƯƠNG HOA',
     price: 45000,
-    badge: '',
+    badge: 'HOT',
     description: 'Vị ngọt thanh dịu từ long nhãn quyện cùng hương thơm dịu ngọt của hoa lài tự nhiên.',
     image: imgLongNhanHuongHoa
   },
@@ -80,7 +80,7 @@ export const PRODUCTS = [
     category: 'FRUIT TEA',
     name: 'TRÀ THẢO MỘC RỪNG THÔNG',
     price: 42000,
-    badge: '',
+    badge: 'BEST',
     description: 'Trà thảo mộc thanh mát mang hương vị thiên nhiên giúp thư giãn và thanh lọc cơ thể.',
     image: imgTraThaoMocRungThong
   },
@@ -89,7 +89,7 @@ export const PRODUCTS = [
     category: 'FRUIT TEA',
     name: 'TRÀ LÀI ĐÁC THƠM',
     price: 42000,
-    badge: 'BEST',
+    badge: '',
     description: 'Trà nhài thơm ngát kết hợp cùng hạt đác giòn sần sật và mứt thơm ngọt dịu.',
     image: imgTraLaiDacThom
   },
@@ -98,7 +98,7 @@ export const PRODUCTS = [
     category: 'FRUIT TEA',
     name: 'TRÀ VẢI HƯƠNG HOA',
     price: 39000,
-    badge: '',
+    badge: 'HOT',
     description: 'Trà thanh nhẹ quyện vị ngọt ngào thơm lừng từ trái vải tươi ngon căng mọng.',
     image: imgTraVaiHuongHoa
   },
@@ -116,7 +116,7 @@ export const PRODUCTS = [
     category: 'FRUIT TEA',
     name: 'TRÀ CHERRY RỪNG',
     price: 45000,
-    badge: '',
+    badge: 'BEST',
     description: 'Vị chua ngọt kích thích vị giác cực đỉnh từ trái cherry rừng chín mọng trên nền trà thanh khiết.',
     image: imgChung
   },
@@ -163,7 +163,7 @@ export const PRODUCTS = [
     category: 'MILK TEA',
     name: 'TRÀ SỮA OLONG',
     price: 38000,
-    badge: '',
+    badge: 'BEST',
     description: 'Trà oolong nướng đậm vị, hòa quyện sữa béo thơm tạo nên hậu vị chát ngọt sâu lắng.',
     image: imgChung
   },
@@ -179,7 +179,7 @@ export const PRODUCTS = [
   {
     id: 'm5',
     category: 'MILK TEA',
-    name: 'OLONG LÀI SỮA (TC TRÀ)',
+    name: 'OLONG LÀI SỮA TRÂN CHÂU TRÀ',
     price: 45000,
     badge: 'BEST',
     description: 'Trà sữa oolong lài thơm ngát đặc trưng kết hợp cùng trân châu trà dai giòn sần sật.',
@@ -190,7 +190,7 @@ export const PRODUCTS = [
     category: 'MILK TEA',
     name: 'OLONG SỮA QUẾ HOA',
     price: 42000,
-    badge: '',
+    badge: 'BEST',
     description: 'Hương thơm ngọt dịu nồng nàn của hoa quế hòa quyện ăn ý cùng vị sữa ô long ngậy béo.',
     image: imgChung
   },
@@ -208,7 +208,7 @@ export const PRODUCTS = [
     category: 'MILK TEA',
     name: 'OLONG SỮA DÀNH DÀNH',
     price: 42000,
-    badge: '',
+    badge: 'HOT',
     description: 'Hương thơm mộc mạc thanh nhã từ hoa dành dành kết hợp vị trà sữa oolong béo nhẹ ngọt thanh.',
     image: imgChung
   },
@@ -340,7 +340,7 @@ export const PRODUCTS = [
     category: 'TOPPING',
     name: 'Trân Châu Trắng',
     price: 7000,
-    badge: 'BEST',
+    badge: '',
     description: 'Trân châu trắng giòn sần sật, ngọt nhẹ thanh mát.',
     image: imgTranChauTrang
   },
@@ -349,7 +349,7 @@ export const PRODUCTS = [
     category: 'TOPPING',
     name: 'Trân Châu Hoàng Kim',
     price: 7000,
-    badge: '',
+    badge: 'BEST',
     description: 'Trân châu hoàng kim dẻo mềm, thơm lừng vị đường đen.',
     image: imgTranChauHoangKim
   },
@@ -367,7 +367,7 @@ export const PRODUCTS = [
     category: 'TOPPING',
     name: 'Trân Châu Ô Long',
     price: 8000,
-    badge: '',
+    badge: 'BEST',
     description: 'Trân châu đậm vị trà ô long, thơm nhẹ hậu vị.',
     image: imgTranChauOlong
   },
@@ -376,7 +376,7 @@ export const PRODUCTS = [
     category: 'TOPPING',
     name: 'Trân Châu Trà',
     price: 7000,
-    badge: '',
+    badge: 'BEST',
     description: 'Trân châu dai giòn đậm đà hương vị trà xanh tươi mát.',
     image: imgTranChauTra
   },

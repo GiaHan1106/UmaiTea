@@ -505,15 +505,115 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background-color: var(--secondary);
-  color: var(--primary-dark);
   font-size: 11px;
   font-weight: 800;
-  padding: 4px 10px;
-  border-radius: 20px;
+  padding: 5px 12px;
+  border-radius: 30px;
   z-index: 5;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.badge-best {
+  background: linear-gradient(135deg, #f59e0b, #ff7a00);
+  --badge-glow-color: 245, 158, 11;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+  animation: badge-pulse 2s infinite ease-in-out;
+}
+
+.badge-hot {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  --badge-glow-color: 255, 75, 43;
+  box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+  animation: badge-pulse 1.8s infinite ease-in-out;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  --badge-glow-color: 6, 182, 212;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+  animation: badge-pulse 2.2s infinite ease-in-out;
+}
+
+/* Badge Icons */
+.product-badge .badge-icon {
+  width: 13px;
+  height: 13px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.badge-best .badge-icon {
+  animation: crown-glow 1.5s infinite ease-in-out;
+}
+
+.badge-hot .badge-icon {
+  animation: fire-flicker 1.2s infinite ease-in-out;
+}
+
+.badge-new .badge-icon {
+  animation: sparkle-flash 1.6s infinite ease-in-out;
+}
+
+/* Keyframe animations */
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(var(--badge-glow-color), 0.35), 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(var(--badge-glow-color), 0.6), 0 0 0 1.5px rgba(255, 255, 255, 0.4) inset;
+  }
+}
+
+@keyframes crown-glow {
+  0%, 100% {
+    transform: scale(0.9) rotate(-5deg);
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.6));
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1)) brightness(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes fire-flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-3deg);
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2) rotate(3deg) translateY(-1px);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)) brightness(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle-flash {
+  0%, 100% {
+    transform: scale(0.8) rotate(0deg);
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.4));
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3) rotate(90deg);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1)) brightness(1.5);
+    opacity: 1;
+  }
+}
+
 
 .product-info {
   padding: 20px;
@@ -537,6 +637,7 @@
 
 .product-desc {
   font-size: 13px;
+  line-height: 1.5;
   color: var(--text-muted);
   margin-bottom: 15px;
   flex-grow: 1;
@@ -544,7 +645,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 58px;
+  height: 4.5em; /* 3 lines * 1.5 line-height */
 }
 
 .product-footer {
@@ -1677,7 +1778,8 @@
   
   .product-desc {
     font-size: 12px;
-    height: 50px;
+    line-height: 1.5;
+    height: 4.5em; /* 3 lines * 1.5 line-height */
     margin-bottom: 10px;
   }
   

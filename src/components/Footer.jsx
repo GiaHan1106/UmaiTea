@@ -24,11 +24,11 @@ export default function Footer({ setActiveTab }) {
             <ul className="footer-contact-list">
               <li>
                 <span>📍</span>
-                <span>Trụ sở chính: 120 Đề Thám, Phường Cầu Ông Lãnh, Quận 1, TP. Hồ Chí Minh</span>
+                <span>Trụ sở chính: Số 222 Nguyễn Thượng Hiền, Phường Bàn Cờ, Quận 3, TP. Hồ Chí Minh</span>
               </li>
               <li>
                 <span>📞</span>
-                <span>Hotline đặt hàng: 1900.3076</span>
+                <span>Hotline đặt hàng: 0974 200 611</span>
               </li>
               <li>
                 <span>✉️</span>
