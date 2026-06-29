@@ -52,14 +52,12 @@ export default function Footer({ setActiveTab }) {
                 <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('menu'); }}>Thực Đơn Đồ Uống</a>
               </li>
               <li>
-                <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('stores'); }}>Hệ Thống Cửa Hàng</a>
+                <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('stores'); }}>Giới Thiệu</a>
               </li>
               <li>
                 <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('franchise'); }}>Hợp Tác Nhượng Quyền</a>
               </li>
-              <li>
-                <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('blog'); }}>Tin Tức & Tuyển Dụng</a>
-              </li>
+
             </ul>
           </div>
         </div>

@@ -3,9 +3,9 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import ProductCard from './components/ProductCard.jsx';
 import OrderModal from './components/OrderModal.jsx';
-import StoreLocator from './components/StoreLocator.jsx';
+import AboutUs from './components/AboutUs.jsx';
 import Franchise from './components/Franchise.jsx';
-import BlogSection from './components/BlogSection.jsx';
+
 import Footer from './components/Footer.jsx';
 import ReceiptModal from './components/ReceiptModal.jsx';
 import { PRODUCTS } from './data/products.js';
@@ -96,7 +96,7 @@ export default function App() {
             </section>
 
             {/* Simulated Mid-Promo banner */}
-            <section style={{
+            <section className="franchise-section" style={{
               background: 'linear-gradient(rgba(var(--primary-dark-rgb), 0.95), rgba(var(--primary-dark-rgb), 0.95)), url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=1200")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -121,8 +121,7 @@ export default function App() {
             </section>
 
             {/* Store and News Quick Previews */}
-            <StoreLocator />
-            <BlogSection />
+            <AboutUs isHomePage={true} />
           </>
         )}
 
@@ -183,11 +182,11 @@ export default function App() {
           </div>
         )}
 
-        {activeTab === 'stores' && <StoreLocator />}
+        {activeTab === 'stores' && <AboutUs />}
 
         {activeTab === 'franchise' && <Franchise />}
 
-        {activeTab === 'blog' && <BlogSection />}
+
       </main>
 
       <Footer setActiveTab={setActiveTab} />

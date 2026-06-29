@@ -23,7 +23,7 @@ export default function Header({
             <span>Chào mừng đến với UmaiTea - Tinh hoa trà sữa nguyên chất!</span>
           </div>
           <div className="top-bar-links">
-            <a href="#store" onClick={() => setActiveTab('stores')}>Hệ Thống Cửa Hàng</a>
+            <a href="#store-detail" onClick={() => setActiveTab('stores')}>Giới Thiệu</a>
             <a href="#franchise" onClick={() => setActiveTab('franchise')}>Nhượng Quyền</a>
             <a href="tel:19003076">Hotline: 1900.3076</a>
           </div>
@@ -98,14 +98,12 @@ export default function Header({
               <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('menu'); }}>Thực Đơn</a>
             </li>
             <li className={activeTab === 'stores' ? 'active' : ''}>
-              <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('stores'); }}>Cửa Hàng</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('stores'); }}>Giới Thiệu</a>
             </li>
             <li className={activeTab === 'franchise' ? 'active' : ''}>
               <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('franchise'); }}>Nhượng Quyền</a>
             </li>
-            <li className={activeTab === 'blog' ? 'active' : ''}>
-              <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('blog'); }}>Tin Tức</a>
-            </li>
+
           </ul>
         </div>
       </nav>

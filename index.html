@@ -9,6 +9,80 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@300;400;500;600;700;800&family=Roboto+Slab:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- SEO JSON-LD Structured Data Schema for Local Business & Signature Drink -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "@id": "https://umaitea.vn/#restaurant",
+        "name": "UmaiTea",
+        "image": "https://umaitea.vn/src/assets/logo.png",
+        "priceRange": "$$",
+        "telephone": "+84974200611",
+        "url": "https://umaitea.vn",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Số 222 Nguyễn Thượng Hiền, Phường Bàn Cờ",
+          "addressLocality": "Quận 3",
+          "addressRegion": "TP. Hồ Chí Minh",
+          "postalCode": "700000",
+          "addressCountry": "VN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "10.776110",
+          "longitude": "106.681120"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:30",
+          "closes": "22:30"
+        },
+        "sameAs": [
+          "https://www.facebook.com/umaitea",
+          "https://www.instagram.com/umaitea"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Trà Sữa Pha Máy Umai (Machine-brewed Milk Tea)",
+        "image": "https://umaitea.vn/src/assets/MILKTEA/CHUNG.svg",
+        "description": "Trà sữa pha máy nguyên lá độc đáo chiết xuất áp suất cao từ lá hồng trà nguyên bản giúp giữ trọn vẹn hương vị trà sữa béo ngậy, đậm đà của UmaiTea.",
+        "brand": {
+          "@type": "Brand",
+          "name": "UmaiTea"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://umaitea.vn/#menu",
+          "priceCurrency": "VND",
+          "price": "35000",
+          "priceValidUntil": "2027-12-31",
+          "availability": "https://schema.org/InStock",
+          "itemCondition": "https://schema.org/NewCondition"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "128"
+        }
+      }
+    ]
+    </script>
   </head>
   <body>
     <div id="root"></div>
