@@ -43,8 +43,10 @@ export default function App() {
     return matchesCategory && matchesSearch;
   });
 
-  // Home Featured Products (e.g. 5 best/hot products)
-  const featuredProducts = PRODUCTS.filter(p => p.badge === 'BEST' || p.badge === 'HOT').slice(0, 5);
+  // Home Featured Products (4 Fruit Teas & 4 Milk Teas for a balanced display)
+  const featuredIds = ['f3', 'f4', 'f6', 'f7', 'm1', 'm3', 'm4', 'm5'];
+  const featuredProducts = PRODUCTS.filter(p => featuredIds.includes(p.id))
+    .sort((a, b) => featuredIds.indexOf(a.id) - featuredIds.indexOf(b.id));
 
   return (
     <>
@@ -68,7 +70,7 @@ export default function App() {
             {/* Featured Section */}
             <section className="menu-display-section container">
               <div className="section-header">
-                <span className="section-cursive">Bestsellers</span>
+                <span className="section-cursive">Món được yêu thích nhất</span>
                 <h2 className="section-title">SẢN PHẨM BÁN CHẠY</h2>
               </div>
               <div className="product-grid">
@@ -105,7 +107,7 @@ export default function App() {
               textAlign: 'center'
             }}>
               <div className="container" style={{ maxWidth: '800px' }}>
-                <span className="hero-cursive" style={{ color: 'var(--secondary)', display: 'block', marginBottom: '15px' }}>UmaiTea Franchise</span>
+                <span className="hero-cursive" style={{ color: 'var(--secondary)', display: 'block', marginBottom: '15px' }}>Nhượng quyền UmaiTea</span>
                 <h2 style={{ fontSize: '32px', fontWeight: 800, marginBottom: '20px' }}>HỢP TÁC NHƯỢNG QUYỀN THƯƠNG HIỆU UMAITEA</h2>
                 <p style={{ fontSize: '15px', opacity: 0.85, marginBottom: '30px', lineHeight: '1.7' }}>
                   Cơ hội đầu tư kinh doanh trà sữa phát triển vững chắc. Đồng hành cùng UmaiTea sở hữu cửa hàng tiêu chuẩn chất lượng cao, tiếp cận tệp khách hàng yêu thích vị trà sữa nguyên lá đậm đà béo ngậy.

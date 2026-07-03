@@ -12,7 +12,7 @@ const slides = [
     actionText: "THỬ NGAY CÙNG UMAI",
   },
   {
-    cursive: "Umai Signature",
+    cursive: "Đặc trưng Umai",
     title: "TRÀ OLONG NGUYÊN LÁ",
     desc: "Vị trà oolong chát nhẹ đượm hương hoa quyện cùng sữa béo thơm vừa vặn, đánh thức mọi giác quan thưởng thức.",
     bgUrl: banner2,

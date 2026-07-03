@@ -244,7 +244,7 @@ export const PRODUCTS = [
   {
     id: 'mat1',
     category: 'MATCHA',
-    name: 'Matcha Latte',
+    name: 'Matcha Sữa Tươi',
     price: 45000,
     badge: 'BEST',
     description: 'Matcha Uji Nhật Bản đậm vị ngậy, đắng nhẹ tinh tế quyện cùng sữa tươi béo thơm dồi dào.',
@@ -271,7 +271,7 @@ export const PRODUCTS = [
   {
     id: 'mat4',
     category: 'MATCHA',
-    name: 'Matcha CoCo',
+    name: 'Matcha Cốt Dừa',
     price: 48000,
     badge: '',
     description: 'Hương vị béo ngậy đặc trưng từ nước cốt dừa thơm phức hòa quyện tuyệt hảo cùng bột matcha Nhật.',
@@ -280,7 +280,7 @@ export const PRODUCTS = [
   {
     id: 'mat5',
     category: 'MATCHA',
-    name: 'ColdWhisk',
+    name: 'Matcha Lạnh Đánh Bọt',
     price: 45000,
     badge: '',
     description: 'Matcha được đánh bọt thủ công kỹ lưỡng giữ trọn hương vị nguyên bản thanh khiết sảng khoái.',
@@ -410,7 +410,7 @@ export const PRODUCTS = [
   {
     id: 't_cheese_ball',
     category: 'TOPPING',
-    name: 'Cheese Ball',
+    name: 'Viên Phô Mai',
     price: 10000,
     badge: 'HOT',
     description: 'Viên phô mai tròn mềm béo ngậy, tan chảy ngay trong miệng.',
