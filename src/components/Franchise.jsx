@@ -44,7 +44,7 @@ export default function Franchise() {
                    `- Ghi chú / Yêu cầu thêm: ${formData.message || 'Không có'}\n\n` +
                    `Trân trọng!`;
 
-      const mailtoUrl = `mailto:hgia11062001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoUrl = `mailto:khoanguyen24062001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
       // Open user's email client
       window.location.href = mailtoUrl;
@@ -109,7 +109,7 @@ export default function Franchise() {
 
             {submitted ? (
               <div className="form-success-alert">
-                🎉 Đăng ký thành công! Đơn đăng ký nhượng quyền đã được chuẩn bị và chuyển tiếp tới hgia11062001@gmail.com. Đội ngũ UmaiTea sẽ liên hệ với quý đối tác trong vòng 24h làm việc. Xin cảm ơn!
+                🎉 Đăng ký thành công! Đơn đăng ký nhượng quyền đã được chuẩn bị và chuyển tiếp tới khoanguyen24062001@gmail.com. Đội ngũ UmaiTea sẽ liên hệ với quý đối tác trong vòng 24h làm việc. Xin cảm ơn!
               </div>
             ) : null}
 

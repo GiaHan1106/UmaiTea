@@ -1,4 +1,14 @@
+import { useState, useEffect } from 'react';
 import umaiLogo from '../assets/umai-logo.svg';
+
+const CATEGORIES = [
+  { value: 'ALL', label: 'Tất cả' },
+  { value: 'MILK TEA', label: 'Trà sữa' },
+  { value: 'FRUIT TEA', label: 'Trà trái cây' },
+  { value: 'MATCHA', label: 'Matcha' },
+  { value: 'COFFEE', label: 'Cà phê' },
+  { value: 'TOPPING', label: 'Topping' }
+];
 
 export default function Header({
   activeTab,
@@ -10,10 +20,37 @@ export default function Header({
   selectedCategory,
   setSelectedCategory
 }) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     setActiveTab('menu');
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.custom-dropdown-container')) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
+  // Automatically scroll the active tab to the center of the mobile navbar container
+  useEffect(() => {
+    const activeEl = document.querySelector('.bottom-nav .nav-links li.active');
+    const container = document.querySelector('.bottom-nav .nav-links');
+    if (activeEl && container) {
+      const activeRect = activeEl.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const scrollLeft = container.scrollLeft + (activeRect.left - containerRect.left) - (containerRect.width / 2) + (activeRect.width / 2);
+      container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    }
+  }, [activeTab]);
+
+  const currentLabel = CATEGORIES.find(c => c.value === selectedCategory)?.label || 'Tất cả';
 
   return (
     <header className="header-wrapper">
@@ -25,7 +62,7 @@ export default function Header({
           <div className="top-bar-links">
             <a href="#store-detail" onClick={() => setActiveTab('stores')}>Giới Thiệu</a>
             <a href="#franchise" onClick={() => setActiveTab('franchise')}>Nhượng Quyền</a>
-            <a href="tel:19003076">Hotline: 1900.3076</a>
+            <a href="tel:0974200611">Hotline: 0974 200 611</a>
           </div>
         </div>
       </div>
@@ -37,18 +74,35 @@ export default function Header({
         {/* Search Bar - Crane Tea Replica style */}
         <form className="search-action-container" onSubmit={handleSearchSubmit}>
           <div className="search-box">
-            <select
-              className="search-category"
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-            >
-              <option value="ALL">Tất cả</option>
-              <option value="MILK TEA">Trà sữa</option>
-              <option value="FRUIT TEA">Trà trái cây</option>
-              <option value="MATCHA">Matcha</option>
-              <option value="COFFEE">Cà phê</option>
-              <option value="TOPPING">Topping</option>
-            </select>
+            <div className="custom-dropdown-container">
+              <button
+                type="button"
+                className="custom-dropdown-btn"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              >
+                <span>{currentLabel}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={`chevron-icon ${isDropdownOpen ? 'open' : ''}`}>
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+
+              {isDropdownOpen && (
+                <ul className="custom-dropdown-list">
+                  {CATEGORIES.map(category => (
+                    <li
+                      key={category.value}
+                      className={`custom-dropdown-item ${selectedCategory === category.value ? 'selected' : ''}`}
+                      onClick={() => {
+                        setSelectedCategory(category.value);
+                        setIsDropdownOpen(false);
+                      }}
+                    >
+                      {category.label}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
             <input
               type="text"
               className="search-input"
@@ -57,15 +111,16 @@ export default function Header({
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button type="submit" className="search-btn" aria-label="Tìm kiếm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="search-icon-svg">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
             </button>
           </div>
         </form>
 
         {/* Actions (Cart & Hotline & Dark/Light Toggle) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-          <a href="tel:19003076" className="hotline-btn hide-for-mobile">
-            0974200611
-          </a>
 
           <button
             className="theme-toggle-header"

@@ -11,42 +11,100 @@ import ReceiptModal from './components/ReceiptModal.jsx';
 import { PRODUCTS } from './data/products.js';
 import './App.css';
 
+import ComingSoon from './components/ComingSoon.jsx';
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const getTabFromPath = (path) => {
+    switch (path) {
+      case '/trang-chu':
+        return 'home';
+      case '/san-pham':
+        return 'menu';
+      case '/cua-hang':
+        return 'stores';
+      case '/nhuong-quyen':
+        return 'franchise';
+      default:
+        return 'home';
+    }
+  };
+
+  const getPathFromTab = (tab) => {
+    switch (tab) {
+      case 'home':
+        return '/trang-chu';
+      case 'menu':
+        return '/san-pham';
+      case 'stores':
+        return '/cua-hang';
+      case 'franchise':
+        return '/nhuong-quyen';
+      default:
+        return '/trang-chu';
+    }
+  };
+
+  const [activeTab, setActiveTab] = useState(() => {
+    const path = window.location.pathname;
+    if (path === '/' || path === '') {
+      window.history.replaceState(null, '', '/trang-chu');
+      return 'home';
+    }
+    return getTabFromPath(path);
+  });
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [theme, setTheme] = useState('light');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [currentOrder, setCurrentOrder] = useState(null);
 
-  // Sync theme to root element
+  // Sync tab switching state with browser address bar pathnames
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    const targetPath = getPathFromTab(activeTab);
+    if (currentPath !== targetPath) {
+      window.history.pushState(null, '', targetPath);
+    }
+    // Scroll page back to top smoothly on tab switch
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
+
+  // Handle browser back and forward actions (history navigation)
+  useEffect(() => {
+    const handlePopState = () => {
+      setActiveTab(getTabFromPath(window.location.pathname));
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Force dark mode active states on HTML tag for consistent theme engine integration
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
+
+  // Filter 4 fruit teas and 4 milk teas as featured items on homepage
+  const featuredFruitTeas = PRODUCTS.filter(p => p.category === 'FRUIT TEA').slice(2, 6); // f3, f4, f6, f7
+  const featuredMilkTeas = PRODUCTS.filter(p => p.category === 'MILK TEA').slice(0, 4); // m1, m3, m4, m5
+  
+  // Symmetrical layout order: fruit teas first row, milk teas second row
+  const featuredProducts = [...featuredFruitTeas, ...featuredMilkTeas];
 
   const handleOrderDirect = (orderItem) => {
     setSelectedProduct(null);
     setCurrentOrder(orderItem);
   };
 
-  // Filtering products for the MENU page
+  // Quick category search handler
   const filteredProducts = PRODUCTS.filter(product => {
-    const matchesCategory =
-      selectedCategory === 'ALL' || product.category === selectedCategory;
-    const matchesSearch =
-      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === 'ALL' || product.category === selectedCategory;
+    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-
-  // Home Featured Products (4 Fruit Teas & 4 Milk Teas for a balanced display)
-  const featuredIds = ['f3', 'f4', 'f6', 'f7', 'm1', 'm3', 'm4', 'm5'];
-  const featuredProducts = PRODUCTS.filter(p => featuredIds.includes(p.id))
-    .sort((a, b) => featuredIds.indexOf(a.id) - featuredIds.indexOf(b.id));
 
   return (
     <>
@@ -66,6 +124,9 @@ export default function App() {
           <>
             {/* Banner promotion slider */}
             <Hero onCtaClick={() => setActiveTab('menu')} />
+
+            {/* Coming Soon Countdown Bar */}
+            <ComingSoon />
 
             {/* Featured Section */}
             <section className="menu-display-section container">

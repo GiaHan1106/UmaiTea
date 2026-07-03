@@ -41,6 +41,8 @@ export default function ReceiptModal({ order, onClose }) {
                 <div className="receipt-divider"></div>
 
                 <div className="receipt-meta">
+                  <div><strong>Khách hàng:</strong> {order.customerName}</div>
+                  <div><strong>Số điện thoại:</strong> {order.customerPhone}</div>
                   <div><strong>Mã đơn hàng:</strong> {orderId}</div>
                   <div><strong>Thời gian:</strong> {orderTime}</div>
                   <div><strong>Hình thức:</strong> Mang về (Zalo Order)</div>

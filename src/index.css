@@ -147,3 +147,19 @@ button {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
+/* Prevent text wrapping in all buttons and tab elements on mobile */
+button,
+.category-tab,
+.modal-btn-option,
+.modal-add-cart-btn,
+.order-btn,
+.hotline-btn,
+.search-btn,
+.nav-cart-btn,
+.hero-btn,
+.submit-form-btn,
+.receipt-action-btn,
+.zalo-action-btn {
+  white-space: nowrap !important;
+}

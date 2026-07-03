@@ -75,8 +75,8 @@ const renderBadge = (badge) => {
         <path d="M12 2l3 6 6-1-4 7 1 6h-12l1-6-4-7 6 1 3-6z" />
       </svg>
     );
-  } else if (badgeLower === 'hot') {
-    badgeText = 'BÁN CHẠY';
+  } else if (badgeLower === 'hot' || badgeLower === 'signature') {
+    badgeText = 'SIGNATURE';
     icon = (
       <svg className="badge-icon icon-fire" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.687 9.58c-1.393-2.653-3.69-4.707-6.027-6.242a.5.5 0 0 0-.825.438c.112 1.487-.193 2.986-.884 4.316-1.157 2.222-3.418 3.6-4.786 5.742a9 9 0 0 0 13.882 10.742c3.155-3.323 2.378-8.835-1.37-15.062z" />

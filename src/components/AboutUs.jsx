@@ -1,5 +1,4 @@
-import imgChung from '../assets/MILKTEA/CHUNG.svg';
-import imgPoster from '../assets/POSTER.jpg';
+import imgPoster from '../assets/POSTER.png';
 
 export default function AboutUs({ isHomePage = false }) {
   return (
@@ -21,7 +20,7 @@ export default function AboutUs({ isHomePage = false }) {
               <div className="about-story-content">
                 <h3 className="story-subtitle">Trải nghiệm khác biệt từ công nghệ trà sữa pha máy</h3>
                 <p className="story-text">
-                  UmaiTea tự hào là thương hiệu tiên phong mang đến định nghĩa mới về thưởng trà hiện đại: <strong>Trà sữa pha máy nguyên lá</strong>. Giữa thị trường tràn ngập trà ủ sẵn để qua đêm và bột béo hóa học tạo vị giả tạo, chúng tôi lựa chọn con đường kết hợp giữa nguồn nông sản Việt hảo hạng và công nghệ chiết xuất tân tiến.
+                  UmaiTea tự hào mang đến một góc nhìn mới mẻ về thưởng trà hiện đại: <strong>Trà sữa pha máy nguyên lá</strong>. Với tôn chỉ ưu tiên sức khỏe và sự thanh khiết tự nhiên, chúng tôi lựa chọn con đường kết hợp giữa nguồn nông sản Việt hảo hạng và công nghệ chiết xuất áp suất tân tiến.
                 </p>
                 <p className="story-text">
                   Bằng cách sử dụng máy pha chuyên dụng áp suất cao, từng lá trà nguyên bản được chiết xuất ngay tại quầy khi khách gọi món. Áp suất lớn từ máy giúp giải phóng trọn vẹn lớp dầu trà thơm ngát, vị chát ngọt sâu lắng cùng hương thơm tự nhiên trong thời gian tối ưu, tránh hiện tượng oxy hóa làm mất chất dinh dưỡng của trà. Khi quyện cùng tỷ lệ sữa béo ngậy lý tưởng, mỗi ly UmaiTea trao tay khách hàng đều giữ trọn vẹn vị tươi mới nguyên bản, đậm đà và tốt cho sức khỏe.
