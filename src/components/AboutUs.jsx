@@ -1,4 +1,5 @@
 import imgChung from '../assets/MILKTEA/CHUNG.svg';
+import imgPoster from '../assets/POSTER.jpg';
 
 export default function AboutUs({ isHomePage = false }) {
   return (
@@ -15,19 +16,18 @@ export default function AboutUs({ isHomePage = false }) {
             {/* Story Grid */}
             <div className="about-story-grid">
               <div className="about-story-image-wrapper">
-                <img src={imgChung} alt="UmaiTea Story" className="about-story-image" />
-                <div className="image-decoration-badge">Since 2024</div>
+                <img src={imgPoster} alt="UmaiTea Story" className="about-story-image" />
               </div>
               <div className="about-story-content">
-                <h3 className="story-subtitle">Tinh hoa trà sữa nguyên lá khởi nguồn từ đam mê</h3>
+                <h3 className="story-subtitle">Trải nghiệm khác biệt từ công nghệ trà sữa pha máy</h3>
                 <p className="story-text">
-                  UmaiTea ra đời không chỉ đơn thuần là một quán trà sữa phục vụ thức uống, mà là kết quả của một hành trình tìm kiếm và gìn giữ hương vị trà sữa nguyên bản ngon đúng điệu. Giữa thị trường tràn ngập bột béo hóa học và hương liệu nhân tạo, UmaiTea kiên định lựa chọn con đường khó khăn hơn: <strong>Trà sữa nguyên lá tự nhiên</strong>.
+                  UmaiTea tự hào là thương hiệu tiên phong mang đến định nghĩa mới về thưởng trà hiện đại: <strong>Trà sữa pha máy nguyên lá</strong>. Giữa thị trường tràn ngập trà ủ sẵn để qua đêm và bột béo hóa học tạo vị giả tạo, chúng tôi lựa chọn con đường kết hợp giữa nguồn nông sản Việt hảo hạng và công nghệ chiết xuất tân tiến.
                 </p>
                 <p className="story-text">
-                  Chúng tôi tuyển chọn nghiêm ngặt những búp trà tươi ngon nhất từ các nông trường trà trứ danh tại Việt Nam, trải qua quy trình sấy và ủ trà thủ công chuẩn xác để giữ được trọn vị chát ngọt sâu lắng của trà. Khi kết hợp với tỷ lệ sữa béo ngậy lý tưởng, mỗi ly UmaiTea trao tay khách hàng đều là tác phẩm đong đầy sự cân bằng hoàn mỹ, tốt cho sức khỏe và tràn ngập năng lượng thư giãn.
+                  Bằng cách sử dụng máy pha chuyên dụng áp suất cao, từng lá trà nguyên bản được chiết xuất ngay tại quầy khi khách gọi món. Áp suất lớn từ máy giúp giải phóng trọn vẹn lớp dầu trà thơm ngát, vị chát ngọt sâu lắng cùng hương thơm tự nhiên trong thời gian tối ưu, tránh hiện tượng oxy hóa làm mất chất dinh dưỡng của trà. Khi quyện cùng tỷ lệ sữa béo ngậy lý tưởng, mỗi ly UmaiTea trao tay khách hàng đều giữ trọn vẹn vị tươi mới nguyên bản, đậm đà và tốt cho sức khỏe.
                 </p>
                 <div className="story-quote">
-                  "Umai trong tiếng Nhật đại diện cho sự ngon miệng và niềm hạnh phúc mộc mạc. Chúng tôi hy vọng từng giọt trà thanh khiết tại UmaiTea sẽ mang lại cảm giác bình yên ấm áp trong mỗi ngày dài làm việc của bạn."
+                  "Umai trong tiếng Nhật đại diện cho sự ngon miệng và niềm hạnh phúc mộc mạc. Chúng tôi hy vọng từng ly trà sữa pha máy tươi mới tại UmaiTea sẽ mang lại cảm giác bình yên ấm áp trong mỗi ngày dài làm việc của bạn."
                 </div>
               </div>
             </div>
