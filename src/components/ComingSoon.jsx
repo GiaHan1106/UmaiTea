@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function ComingSoon() {
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-07-27T00:00:00+07:00').getTime();
+    const targetDate = new Date('2026-07-30T00:00:00+07:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -42,6 +42,10 @@ export default function ComingSoon() {
   return (
     <section className="coming-soon-section">
       <div className="container">
+        {/* Background Glowing Drift Blobs */}
+        <div className="coming-soon-bg-blob blob-1"></div>
+        <div className="coming-soon-bg-blob blob-2"></div>
+
         <div className="coming-soon-card">
           <div className="coming-soon-glow"></div>
           
@@ -61,11 +65,11 @@ export default function ComingSoon() {
           
           <div className="coming-soon-badge">🎉 ĐẠI TIỆC KHAI TRƯƠNG 🎉</div>
           
-          <h2 className="coming-soon-title">27 . 07 . 2026</h2>
+          <h2 className="coming-soon-title">30 . 07 . 2026</h2>
           <h3 className="coming-soon-subtitle">COMING SOON</h3>
           
           <p className="coming-soon-desc">
-            UMAI Tea hân hoan khai trương chi nhánh đầu tiên! Trải nghiệm trà sữa pha máy hiện đại & trà trái cây thanh mát nói không với đường, cùng nhiều ưu đãi hấp dẫn trong dịp khai trương.
+            UmaiTea chính thức trình làng chi nhánh đầu tiên! Hãy sẵn sàng để đánh thức vị giác với dòng Trà Sữa Pha Máy Nguyên Lá đậm đặc, béo ngậy và các thức uống Trà Trái Cây tươi mát, thanh lọc sức khỏe. Rất nhiều ưu đãi bùng nổ đang chờ đón bạn tại điểm hẹn mới!
             <span className="coming-soon-address-block">
               Địa chỉ: Số 222 Nguyễn Thượng Hiền, Phường Bàn Cờ, TP.HCM.
             </span>
@@ -82,19 +86,6 @@ export default function ComingSoon() {
               <div className="promo-info-text">
                 <span className="promo-title-main">MUA 1 TẶNG 1</span>
                 <span className="promo-sub-main">Áp dụng toàn thực đơn</span>
-              </div>
-            </div>
-            <div className="promo-badge-item promo-gifts">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="promo-icon-svg promo-icon-gold">
-                <polyline points="20 12 20 22 4 22 4 12" />
-                <rect width="20" height="5" x="2" y="7" rx="1" />
-                <path d="M12 22V7" />
-                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7Z" />
-                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7Z" />
-              </svg>
-              <div className="promo-info-text">
-                <span className="promo-title-main">NHẬN QUÀ MIỄN PHÍ</span>
-                <span className="promo-sub-main">Nhiều phần quà khai trương</span>
               </div>
             </div>
           </div>

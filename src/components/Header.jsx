@@ -158,6 +158,9 @@ export default function Header({
             <li className={activeTab === 'franchise' ? 'active' : ''}>
               <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('franchise'); }}>Nhượng Quyền</a>
             </li>
+            <li className={activeTab === 'recruitment' ? 'active' : ''}>
+              <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('recruitment'); }}>Tuyển Dụng</a>
+            </li>
 
           </ul>
         </div>

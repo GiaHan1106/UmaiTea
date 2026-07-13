@@ -74,7 +74,7 @@ export default function AboutUs({ isHomePage = false }) {
                   <span className="item-icon">📍</span>
                   <div className="item-text">
                     <strong>Địa chỉ cửa hàng:</strong>
-                    <span>Số 222 Nguyễn Thượng Hiền, Phường Bàn Cờ, Quận 3, TP. Hồ Chí Minh</span>
+                    <span>Số 222 Nguyễn Thượng Hiền, Phường Bàn Cờ, TP.HCM</span>
                   </div>
                 </div>
                 <div className="store-detail-item">
@@ -103,43 +103,16 @@ export default function AboutUs({ isHomePage = false }) {
 
             {/* Map Area */}
             <div className="store-map-wrapper">
-              <div className="store-simulated-map" style={{
-                backgroundImage: 'radial-gradient(var(--border-color) 1px, transparent 1px)',
-                backgroundSize: '24px 24px',
-                backgroundColor: 'var(--bg-body)'
-              }}>
-                <div style={{ position: 'absolute', inset: 0, border: '10px solid var(--border-color)', opacity: 0.15 }}></div>
-                <div style={{ position: 'absolute', top: '30%', left: '10%', right: '10%', height: '3px', background: 'rgba(8,72,71,0.06)' }}></div>
-                <div style={{ position: 'absolute', top: '60%', left: '10%', right: '10%', height: '3px', background: 'rgba(8,72,71,0.06)' }}></div>
-                <div style={{ position: 'absolute', left: '40%', top: '5%', bottom: '5%', width: '3px', background: 'rgba(8,72,71,0.06)' }}></div>
-                <div style={{ position: 'absolute', left: '75%', top: '5%', bottom: '5%', width: '3px', background: 'rgba(8,72,71,0.06)' }}></div>
-                
-                {/* Single pin marker */}
-                <div
-                  className="map-pin active"
-                  style={{ top: '45%', left: '55%' }}
-                  title="UmaiTea Nguyễn Thượng Hiền"
-                />
-                
-                <div
-                  className="map-pin-label"
-                  style={{
-                    top: 'calc(45% - 35px)',
-                    left: 'calc(55% - 100px)'
-                  }}
-                >
-                  📍 UmaiTea Bàn Cờ - Quận 3
-                </div>
-
-                <div className="map-overlay-detail">
-                  <h4 className="map-overlay-title">UmaiTea Quận 3</h4>
-                  <p style={{ fontSize: '13px', marginBottom: '8px' }}>Số 222 Nguyễn Thượng Hiền, P. Bàn Cờ, Q. 3</p>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', opacity: 0.8 }}>
-                    <span>☎️ 0974 200 611</span>
-                    <span>⏰ 08:30 - 22:30</span>
-                  </div>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7838.9614325295925!2d106.68131407443484!3d10.774446089374187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f000dbb1a3d%3A0x8b2af0c7ed9008fe!2sUmai%20Tea!5e0!3m2!1sen!2s!4v1783915295501!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Umai Tea Location Map"
+              ></iframe>
             </div>
           </div>
         </div>

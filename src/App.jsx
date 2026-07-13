@@ -5,6 +5,7 @@ import ProductCard from './components/ProductCard.jsx';
 import OrderModal from './components/OrderModal.jsx';
 import AboutUs from './components/AboutUs.jsx';
 import Franchise from './components/Franchise.jsx';
+import Recruitment from './components/Recruitment.jsx';
 
 import Footer from './components/Footer.jsx';
 import ReceiptModal from './components/ReceiptModal.jsx';
@@ -24,6 +25,8 @@ export default function App() {
         return 'stores';
       case '/nhuong-quyen':
         return 'franchise';
+      case '/tuyen-dung':
+        return 'recruitment';
       default:
         return 'home';
     }
@@ -39,6 +42,8 @@ export default function App() {
         return '/cua-hang';
       case 'franchise':
         return '/nhuong-quyen';
+      case 'recruitment':
+        return '/tuyen-dung';
       default:
         return '/trang-chu';
     }
@@ -77,6 +82,23 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  // Automatically scroll the active category tab to the center of the mobile list container
+  useEffect(() => {
+    if (activeTab === 'menu') {
+      const timer = setTimeout(() => {
+        const activeEl = document.querySelector('.category-tab.active');
+        const container = document.querySelector('.category-tabs');
+        if (activeEl && container) {
+          const activeRect = activeEl.getBoundingClientRect();
+          const containerRect = container.getBoundingClientRect();
+          const scrollLeft = container.scrollLeft + (activeRect.left - containerRect.left) - (containerRect.width / 2) + (activeRect.width / 2);
+          container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+        }
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [selectedCategory, activeTab]);
 
   // Force dark mode active states on HTML tag for consistent theme engine integration
   useEffect(() => {
@@ -248,6 +270,8 @@ export default function App() {
         {activeTab === 'stores' && <AboutUs />}
 
         {activeTab === 'franchise' && <Franchise />}
+
+        {activeTab === 'recruitment' && <Recruitment />}
 
 
       </main>
