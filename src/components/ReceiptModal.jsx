@@ -34,7 +34,7 @@ export default function ReceiptModal({ order, onClose }) {
                 <div className="receipt-header">
                   <h3 className="receipt-brand">UMAITEA</h3>
                   <p className="receipt-shop-info">Tinh Hoa Trà Sữa Nguyên Chất</p>
-                  <p className="receipt-shop-detail">182 Sư Vạn Hạnh, Q.10, TP.HCM</p>
+                  <p className="receipt-shop-detail">222, Nguyễn Thượng Hiền, Phường Bàn Cờ, TP.HCM</p>
                   <p className="receipt-shop-detail">Hotline: 0974.200.611</p>
                 </div>
 
@@ -57,25 +57,43 @@ export default function ReceiptModal({ order, onClose }) {
                     <span className="receipt-item-price">Thành tiền</span>
                   </div>
                   
-                  <div className="receipt-item-row body">
-                    <span className="receipt-item-name bold">{order.name}</span>
-                    <span className="receipt-item-qty">x{order.qty}</span>
-                    <span className="receipt-item-price">{formatPrice(order.price * order.qty)}</span>
-                  </div>
-
-                  <div className="receipt-item-options">
-                    {order.size && <div>- Cỡ: Size {order.size}</div>}
-                    {order.sugar && <div>- Đường: {order.sugar}</div>}
-                    {order.ice && <div>- Đá: {order.ice}</div>}
-                    {order.toppings && order.toppings.length > 0 && (
-                      <div>
-                        - Topping: {order.toppings.map(t => t.name).join(', ')}
+                  {order.items && order.items.map((item, idx) => (
+                    <div key={item.id || idx} className="receipt-item-group" style={{ marginBottom: '10px' }}>
+                      <div className="receipt-item-row body">
+                        <span className="receipt-item-name bold">{item.name}</span>
+                        <span className="receipt-item-qty">x{item.qty}</span>
+                        <span className="receipt-item-price">{formatPrice(item.price * item.qty)}</span>
                       </div>
-                    )}
-                  </div>
+
+                      <div className="receipt-item-options" style={{ paddingLeft: '10px', fontSize: '11px', opacity: 0.8, marginTop: '2px' }}>
+                        {item.size && <div>- Cỡ: Size {item.size}</div>}
+                        {item.sugar && <div>- Đường: {item.sugar}</div>}
+                        {item.ice && <div>- Đá: {item.ice}</div>}
+                        {item.toppings && item.toppings.length > 0 && (
+                          <div>
+                            - Topping: {item.toppings.map(t => t.name).join(', ')}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="receipt-divider"></div>
+
+                {order.shippingFee > 0 && (
+                  <>
+                    <div className="receipt-total-row" style={{ fontSize: '13px', fontWeight: 'normal', marginBottom: '4px' }}>
+                      <span>Tạm tính</span>
+                      <span>{formatPrice(order.subtotal)}</span>
+                    </div>
+                    <div className="receipt-total-row" style={{ fontSize: '13px', fontWeight: 'normal', marginBottom: '4px' }}>
+                      <span>Phí vận chuyển</span>
+                      <span>{formatPrice(order.shippingFee)}</span>
+                    </div>
+                    <div className="receipt-divider" style={{ borderStyle: 'dashed' }}></div>
+                  </>
+                )}
 
                 <div className="receipt-total-row">
                   <span className="receipt-total-label">TỔNG CỘNG</span>
@@ -92,7 +110,7 @@ export default function ReceiptModal({ order, onClose }) {
 
               <div className="receipt-actions">
                 <button className="receipt-action-btn print-btn" onClick={handlePrint}>
-                  🖨️ In Phiếu Đơn Hàng
+                  In Phiếu Đơn Hàng
                 </button>
               </div>
             </div>

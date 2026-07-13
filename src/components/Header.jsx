@@ -18,7 +18,9 @@ export default function Header({
   searchQuery,
   setSearchQuery,
   selectedCategory,
-  setSelectedCategory
+  setSelectedCategory,
+  cartCount,
+  onCartClick
 }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -121,6 +123,37 @@ export default function Header({
 
         {/* Actions (Cart & Hotline & Dark/Light Toggle) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          
+          {/* Cart Icon Button */}
+          <button
+            className="nav-cart-btn"
+            onClick={onCartClick}
+            aria-label="Xem giỏ hàng"
+            style={{ border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ display: 'block' }}
+            >
+              <path d="M 2 3 h 4 l 2.5 12 h 9.5" />
+              <path d="M 21 6 L 18 15 H 8.5" />
+              <path d="M 6.6 6 h 14.4" />
+              <path d="M 7.7 11 h 11.6" />
+              <path d="M 11.4 6 L 11.7 15" />
+              <path d="M 16.2 6 L 14.8 15" />
+              <circle cx="10" cy="20" r="1.5" fill="currentColor" stroke="none" />
+              <circle cx="16" cy="20" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+            {cartCount > 0 && <span className="cart-count-badge">{cartCount}</span>}
+          </button>
 
           <button
             className="theme-toggle-header"

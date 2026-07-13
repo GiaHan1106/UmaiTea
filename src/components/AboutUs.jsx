@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import imgPoster from '../assets/POSTER.png';
 
 export default function AboutUs({ isHomePage = false }) {
+  const [showMap, setShowMap] = useState(false);
   return (
     <section className="about-us-section">
       <div className="container">
@@ -103,16 +105,43 @@ export default function AboutUs({ isHomePage = false }) {
 
             {/* Map Area */}
             <div className="store-map-wrapper">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7838.9614325295925!2d106.68131407443484!3d10.774446089374187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f000dbb1a3d%3A0x8b2af0c7ed9008fe!2sUmai%20Tea!5e0!3m2!1sen!2s!4v1783915295501!5m2!1sen!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title="Umai Tea Location Map"
-              ></iframe>
+              {showMap ? (
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7838.9614325295925!2d106.68131407443484!3d10.774446089374187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f000dbb1a3d%3A0x8b2af0c7ed9008fe!2sUmai%20Tea!5e0!3m2!1sen!2s!4v1783915295501!5m2!1sen!2s"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Umai Tea Location Map"
+                ></iframe>
+              ) : (
+                <div className="map-placeholder" onClick={() => setShowMap(true)}>
+                  <div className="map-placeholder-overlay">
+                    <div className="cute-map-pin-container">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 64 64" fill="none">
+                        <path d="M32 2C19.85 2 10 11.85 10 24C10 39.5 32 62 32 62C32 62 54 39.5 54 24C54 11.85 44.15 2 32 2Z" fill="var(--primary)" />
+                        <circle cx="32" cy="24" r="14" fill="#ffffff" />
+                        <circle cx="27" cy="22" r="2" fill="var(--primary-dark)" />
+                        <circle cx="37" cy="22" r="2" fill="var(--primary-dark)" />
+                        <path d="M 29 27 Q 32 30 35 27" stroke="var(--primary-dark)" strokeWidth="2" strokeLinecap="round" fill="none" />
+                        <circle cx="24" cy="25" r="1.5" fill="#ffb3ba" />
+                        <circle cx="40" cy="25" r="1.5" fill="#ffb3ba" />
+                      </svg>
+                    </div>
+                    <h4 style={{ color: 'var(--primary-dark)', fontSize: '18px', fontWeight: 800, margin: '12px 0 2px 0' }}>
+                      Tìm đường tới Umai nha! 📍
+                    </h4>
+                    <button className="cute-map-btn">
+                      BẤM XEM BẢN ĐỒ
+                    </button>
+                    <span style={{ fontSize: '11px', marginTop: '10px', color: 'var(--text-muted)', fontWeight: 500 }}>
+                      (Bấm để mở Google Maps tương tác nè)
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

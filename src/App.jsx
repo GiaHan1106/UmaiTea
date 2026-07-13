@@ -11,8 +11,10 @@ import Footer from './components/Footer.jsx';
 import ReceiptModal from './components/ReceiptModal.jsx';
 import { PRODUCTS } from './data/products.js';
 import './App.css';
-
 import ComingSoon from './components/ComingSoon.jsx';
+import CartDrawer from './components/CartDrawer.jsx';
+import CheckoutModal from './components/CheckoutModal.jsx';
+import OrderChannelModal from './components/OrderChannelModal.jsx';
 
 export default function App() {
   const getTabFromPath = (path) => {
@@ -62,6 +64,68 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [currentOrder, setCurrentOrder] = useState(null);
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('umaitea_cart');
+      if (saved) {
+        const { items, timestamp } = JSON.parse(saved);
+        if (Date.now() - timestamp < 30 * 60 * 1000) {
+          return items;
+        } else {
+          localStorage.removeItem('umaitea_cart');
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    return [];
+  });
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [orderChannel, setOrderChannel] = useState(() => {
+    try {
+      const saved = localStorage.getItem('umaitea_cart');
+      if (saved) {
+        const { timestamp } = JSON.parse(saved);
+        if (Date.now() - timestamp < 30 * 60 * 1000) {
+          return 'web';
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    return null;
+  });
+  const [isChannelModalOpen, setIsChannelModalOpen] = useState(false);
+  const [pendingProduct, setPendingProduct] = useState(null);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+
+  // Sync cart items to localStorage with timestamp
+  useEffect(() => {
+    try {
+      if (cartItems.length > 0) {
+        const data = {
+          items: cartItems,
+          timestamp: Date.now()
+        };
+        localStorage.setItem('umaitea_cart', JSON.stringify(data));
+      } else {
+        localStorage.removeItem('umaitea_cart');
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, [cartItems]);
+
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 2500);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
 
   // Sync tab switching state with browser address bar pathnames
   useEffect(() => {
@@ -116,9 +180,98 @@ export default function App() {
   // Symmetrical layout order: fruit teas first row, milk teas second row
   const featuredProducts = [...featuredFruitTeas, ...featuredMilkTeas];
 
-  const handleOrderDirect = (orderItem) => {
-    setSelectedProduct(null);
-    setCurrentOrder(orderItem);
+  const addToCart = (newItem) => {
+    setCartItems(prev => {
+      const existingItemIndex = prev.findIndex(item => item.id === newItem.id);
+      if (existingItemIndex > -1) {
+        const updated = [...prev];
+        const existingItem = updated[existingItemIndex];
+        const newQty = existingItem.qty + newItem.qty;
+        updated[existingItemIndex] = {
+          ...existingItem,
+          qty: newQty,
+          totalPrice: existingItem.price * newQty
+        };
+        return updated;
+      }
+      return [...prev, newItem];
+    });
+    setToastMessage(`Đã thêm ${newItem.qty}x ${newItem.name} vào giỏ hàng thành công!`);
+    setShowToast(true);
+  };
+
+  const updateCartQty = (id, newQty) => {
+    if (newQty <= 0) {
+      removeFromCart(id);
+      return;
+    }
+    setCartItems(prev =>
+      prev.map(item =>
+        item.id === id
+          ? { ...item, qty: newQty, totalPrice: item.price * newQty }
+          : item
+      )
+    );
+  };
+
+  const removeFromCart = (id) => {
+    setCartItems(prev => prev.filter(item => item.id !== id));
+  };
+
+  const handleCheckout = () => {
+    setIsCartOpen(false);
+    setIsCheckoutOpen(true);
+  };
+
+  const handleCheckoutSubmit = (name, phone) => {
+    const subtotal = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+    const totalDrinksQty = cartItems.reduce((sum, item) => {
+      if (item.product && item.product.category === 'TOPPING') return sum;
+      return sum + item.qty;
+    }, 0);
+    const freeShipThresholdQty = 5;
+    const shippingFee = subtotal === 0 ? 0 : (totalDrinksQty >= freeShipThresholdQty ? 0 : 20000);
+    const totalPrice = subtotal + shippingFee;
+
+    const order = {
+      orderId: 'UT-' + Math.floor(100000 + Math.random() * 900000),
+      orderTime: new Date().toLocaleString('vi-VN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      }),
+      customerName: name,
+      customerPhone: phone,
+      items: [...cartItems],
+      subtotal,
+      shippingFee,
+      totalPrice
+    };
+
+    setCurrentOrder(order);
+    setCartItems([]);
+    setIsCheckoutOpen(false);
+  };
+
+  const handleProductClick = (product) => {
+    if (!orderChannel && cartItems.length === 0) {
+      setPendingProduct(product);
+      setIsChannelModalOpen(true);
+    } else {
+      setSelectedProduct(product);
+    }
+  };
+
+  const handleSelectWeb = () => {
+    setOrderChannel('web');
+    setIsChannelModalOpen(false);
+    if (pendingProduct) {
+      setSelectedProduct(pendingProduct);
+      setPendingProduct(null);
+    }
   };
 
   // Quick category search handler
@@ -127,6 +280,14 @@ export default function App() {
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const cartSubtotal = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+  const cartTotalDrinksQty = cartItems.reduce((sum, item) => {
+    if (item.product && item.product.category === 'TOPPING') return sum;
+    return sum + item.qty;
+  }, 0);
+  const cartShippingFee = cartSubtotal === 0 ? 0 : (cartTotalDrinksQty >= 5 ? 0 : 20000);
+  const cartTotal = cartSubtotal + cartShippingFee;
 
   return (
     <>
@@ -139,6 +300,8 @@ export default function App() {
         setSearchQuery={setSearchQuery}
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
+        cartCount={cartItems.reduce((sum, item) => sum + item.qty, 0)}
+        onCartClick={() => setIsCartOpen(true)}
       />
 
       <main style={{ flexGrow: 1 }}>
@@ -161,7 +324,7 @@ export default function App() {
                   <ProductCard
                     key={product.id}
                     product={product}
-                    onOrderClick={setSelectedProduct}
+                    onOrderClick={handleProductClick}
                   />
                 ))}
               </div>
@@ -258,7 +421,7 @@ export default function App() {
                     <ProductCard
                       key={product.id}
                       product={product}
-                      onOrderClick={setSelectedProduct}
+                      onOrderClick={handleProductClick}
                     />
                   ))}
                 </div>
@@ -283,9 +446,34 @@ export default function App() {
         <OrderModal
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
-          onOrderDirect={handleOrderDirect}
+          onAddToCart={addToCart}
         />
       )}
+
+      {/* Cart Drawer Panel */}
+      <CartDrawer
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+        onUpdateQty={updateCartQty}
+        onRemoveItem={removeFromCart}
+        onCheckout={handleCheckout}
+      />
+
+      {/* Checkout Info Modal */}
+      <CheckoutModal
+        isOpen={isCheckoutOpen}
+        onClose={() => setIsCheckoutOpen(false)}
+        onSubmit={handleCheckoutSubmit}
+        totalAmount={cartTotal}
+      />
+
+      {/* Order Channel Selection Modal */}
+      <OrderChannelModal
+        isOpen={isChannelModalOpen}
+        onClose={() => setIsChannelModalOpen(false)}
+        onSelectWeb={handleSelectWeb}
+      />
 
       {/* Receipt & Zalo QR Scan Modal */}
       {currentOrder && (
@@ -293,6 +481,14 @@ export default function App() {
           order={currentOrder}
           onClose={() => setCurrentOrder(null)}
         />
+      )}
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="toast-notification">
+          <span style={{ marginRight: '8px' }}>✅</span>
+          {toastMessage}
+        </div>
       )}
     </>
   );

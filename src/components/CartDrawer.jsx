@@ -18,8 +18,12 @@ export default function CartDrawer({
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
-  const freeShipThreshold = 150000;
-  const shippingFee = subtotal === 0 ? 0 : (subtotal >= freeShipThreshold ? 0 : 20000);
+  const totalDrinksQty = cartItems.reduce((sum, item) => {
+    if (item.product && item.product.category === 'TOPPING') return sum;
+    return sum + item.qty;
+  }, 0);
+  const freeShipThresholdQty = 5;
+  const shippingFee = subtotal === 0 ? 0 : (totalDrinksQty >= freeShipThresholdQty ? 0 : 20000);
   const total = subtotal + shippingFee;
 
   return (
@@ -27,8 +31,29 @@ export default function CartDrawer({
       <div className="cart-backdrop" onClick={onClose} />
       <div className="cart-drawer">
         <div className="cart-header">
-          <div className="cart-title-area">
-            <span className="cart-icon-drawer">🛒</span>
+          <div className="cart-title-area" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span className="cart-icon-drawer" style={{ display: 'flex', alignItems: 'center' }}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M 2 3 h 4 l 2.5 12 h 9.5" />
+                <path d="M 21 6 L 18 15 H 8.5" />
+                <path d="M 6.6 6 h 14.4" />
+                <path d="M 7.7 11 h 11.6" />
+                <path d="M 11.4 6 L 11.7 15" />
+                <path d="M 16.2 6 L 14.8 15" />
+                <circle cx="10" cy="20" r="1.5" fill="currentColor" stroke="none" />
+                <circle cx="16" cy="20" r="1.5" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
             <span className="cart-title">Giỏ Hàng Của Bạn</span>
           </div>
           <button className="cart-close-btn" onClick={onClose} aria-label="Đóng giỏ hàng">
@@ -96,10 +121,38 @@ export default function CartDrawer({
                       <span className="cart-item-price">{formatPrice(item.totalPrice)}</span>
                       <button
                         onClick={() => onRemoveItem(item.id)}
-                        style={{ color: 'var(--accent-red)', fontSize: '15px', padding: '0 5px' }}
+                        style={{
+                          color: 'var(--accent-red)',
+                          padding: '0 5px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          border: 'none',
+                          background: 'transparent',
+                          cursor: 'pointer',
+                          transition: 'transform 0.15s ease'
+                        }}
+                        className="cart-remove-btn"
                         aria-label="Xoá sản phẩm"
                       >
-                        🗑️
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M 9 5 l 1.5 -3 h 3 l 1.5 3" />
+                          <path d="M 3 5.5 h 18" />
+                          <path d="M 5 6 L 7 21 h 10 L 19 6" />
+                          <path d="M 9.5 10 L 10.5 18" />
+                          <path d="M 12 10 v 8" />
+                          <path d="M 14.5 10 L 13.5 18" />
+                        </svg>
                       </button>
                     </div>
                   </div>
@@ -125,9 +178,9 @@ export default function CartDrawer({
                 )}
               </span>
             </div>
-            {subtotal < freeShipThreshold && (
-              <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginBottom: '15px', textAlign: 'center' }}>
-                Mua thêm <strong>{formatPrice(freeShipThreshold - subtotal)}</strong> để được Miễn phí giao hàng!
+            {totalDrinksQty < freeShipThresholdQty && (
+              <p className="cart-free-ship-note">
+                Mua thêm <strong>{freeShipThresholdQty - totalDrinksQty} ly</strong> để được Miễn phí giao hàng!
               </p>
             )}
             <div className="cart-summary-row total">
