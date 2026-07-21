@@ -41,7 +41,7 @@ import imgTraiNhan from '../assets/TOPPING/TraiNhan.svg';
 import imgTraiVai from '../assets/TOPPING/TraiVai.svg';
 import imgTranChauHoangKim from '../assets/TOPPING/TranChauHoangKim.svg';
 import imgTranChauKhoaiMon from '../assets/TOPPING/TranChauKhoaiMon.svg';
-import imgTranChauOlong from '../assets/TOPPING/TranChauOlong.svg';
+import imgTranChauBanhBo from '../assets/TOPPING/TranChauBanhBo.png';
 import imgTranChauTra from '../assets/TOPPING/TranChauTra.svg';
 import imgTranChauTrang from '../assets/TOPPING/TranChauTrang.svg';
 
@@ -350,7 +350,7 @@ export const PRODUCTS = [
     price: 8000,
     badge: 'BEST',
     description: 'Trân châu đậm vị trà ô long, thơm nhẹ hậu vị.',
-    image: imgTranChauOlong
+    image: imgTranChauBanhBo
   },
   {
     id: 't_tea_pearl',
