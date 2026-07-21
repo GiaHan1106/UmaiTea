@@ -609,6 +609,11 @@
   transition: transform 0.5s ease;
 }
 
+.product-card.category-matcha .product-img,
+.product-card.category-coffee .product-img {
+  object-position: center bottom;
+}
+
 .product-card:hover .product-img {
   transform: scale(1.08);
 }
