@@ -22,6 +22,8 @@ import imgTraKimQuat from "../assets/FRUIT/TRÀKIMQUẤT.svg";
 import imgTraLaiDacThom from "../assets/FRUIT/TRÀLÀIĐÁCTHƠM.svg";
 import imgTraThaoMocRungThong from "../assets/FRUIT/TRÀTHẢOMỘCRỪNGTHÔNG.svg";
 import imgTraVaiHuongHoa from "../assets/FRUIT/TRÀVẢIHƯƠNGHOA.svg";
+import imgTraCherryRung from "../assets/FRUIT/TRÀCHERRYRỪNG.svg";
+import imgTraDauThungLung from "../assets/FRUIT/TRÀDÂUTHUNGLŨNG.svg";
 
 // Milk Tea
 import imgOlongLaiSuaTranChauTra from "../assets/MILKTEA/OLONGLÀISỮATRÂNCHÂUTRÀ.svg";
@@ -40,10 +42,11 @@ import imgThachQueHoa from "../assets/TOPPING/ThachQueHoa.svg";
 import imgTraiNhan from "../assets/TOPPING/TraiNhan.svg";
 import imgTraiVai from "../assets/TOPPING/TraiVai.svg";
 import imgTranChauHoangKim from "../assets/TOPPING/TranChauHoangKim.svg";
-import imgTranChauKhoaiMon from "../assets/TOPPING/TranChauKhoaiMon.svg";
+import imgTranChauKhoaiMon from "../assets/TOPPING/TranChauKhoaiMon.png";
 import imgTranChauBanhBo from "../assets/TOPPING/TranChauBanhBo.png";
 import imgTranChauTra from "../assets/TOPPING/TranChauTra.svg";
 import imgTranChauTrang from "../assets/TOPPING/TranChauTrang.svg";
+import imgMachiato from "../assets/TOPPING/Machiato.png";
 
 export const PRODUCTS = [
     // --- FRUIT TEA ---
@@ -117,7 +120,7 @@ export const PRODUCTS = [
         price: 35000,
         badge: "BEST",
         description: "Vị chua ngọt kích thích vị giác cực đỉnh từ trái cherry rừng chín mọng trên nền trà thanh khiết.",
-        image: imgChung,
+        image: imgTraCherryRung,
     },
     {
         id: "f9",
@@ -126,7 +129,7 @@ export const PRODUCTS = [
         price: 35000,
         badge: "",
         description: "Dâu tây thơm ngọt thanh mát mang đậm hương vị tươi mới của vùng thung lũng xanh tươi.",
-        image: imgChung,
+        image: imgTraDauThungLung,
     },
     {
         id: "f10",
@@ -422,7 +425,7 @@ export const PRODUCTS = [
         price: 10000,
         badge: "NEW",
         description: "Lớp kem béo ngậy phủ trên bề mặt nước uống.",
-        image: imgChung,
+        image: imgMachiato,
     },
     {
         id: "t_osmanthus_cheese_jelly",
