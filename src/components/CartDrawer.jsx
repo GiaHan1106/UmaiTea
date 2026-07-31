@@ -190,6 +190,9 @@ export default function CartDrawer({
             <button className="cart-checkout-btn" onClick={onCheckout}>
               TIẾN HÀNH ĐẶT HÀNG
             </button>
+            <p style={{ fontSize: '11px', color: 'var(--accent-red)', textAlign: 'center', margin: '10px 0 0 0', fontStyle: 'italic', lineHeight: '1.4', fontWeight: 500 }}>
+              * Ưu đãi Mua 1 Tặng 1 chỉ áp dụng khi mua trực tiếp tại quán.
+            </p>
           </div>
         )}
       </div>

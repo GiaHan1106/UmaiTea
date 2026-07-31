@@ -76,7 +76,7 @@ export default function CheckoutModal({ isOpen, onClose, onSubmit, totalAmount }
               borderRadius: '8px',
               padding: '12px 15px',
               textAlign: 'center',
-              marginBottom: '20px',
+              marginBottom: '15px',
               width: '100%'
             }}>
               <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Tổng thanh toán: </span>
@@ -87,6 +87,10 @@ export default function CheckoutModal({ isOpen, onClose, onSubmit, totalAmount }
                 (Gọi Hotline 0974.200.611 nếu cần hỗ trợ gấp)
               </p>
             </div>
+
+            <p style={{ fontSize: '11px', color: 'var(--accent-red)', textAlign: 'center', marginBottom: '15px', fontStyle: 'italic', fontWeight: 600, lineHeight: '1.4' }}>
+              * Lưu ý: Đơn hàng đặt qua Website không áp dụng chương trình Mua 1 Tặng 1 (chỉ áp dụng khi mua trực tiếp tại quán).
+            </p>
 
             <div style={{ display: 'flex', gap: '15px', width: '100%', marginTop: '10px' }}>
               <button 

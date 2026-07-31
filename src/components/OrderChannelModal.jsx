@@ -100,6 +100,10 @@ export default function OrderChannelModal({ isOpen, onClose, onSelectWeb, grabLi
               <span style={{ fontSize: '24px' }}>🍵</span>
             </button>
           </div>
+
+          <p style={{ fontSize: '11px', color: 'var(--accent-red)', marginTop: '20px', fontStyle: 'italic', fontWeight: 600, width: '100%', textAlign: 'center', lineHeight: '1.4' }}>
+            * Lưu ý: Chương trình Mua 1 Tặng 1 chỉ áp dụng khi mua trực tiếp tại quán (không áp dụng cho đơn hàng đặt trực tuyến qua Website hoặc GrabFood).
+          </p>
         </div>
       </div>
     </div>

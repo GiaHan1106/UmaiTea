@@ -75,7 +75,7 @@ export default function ComingSoon() {
               <h3 className="coming-soon-subtitle">UMAITEA CHÀO BẠN</h3>
               
               <p className="coming-soon-desc">
-                Hôm nay UmaiTea chính thức khai trương chi nhánh đầu tiên! Hãy ghé ngay cửa hàng hoặc đặt trực tiếp qua website để nhận ngay ưu đãi bùng nổ <strong>MUA 1 TẶNG 1</strong> áp dụng cho toàn bộ thực đơn nước uống nguyên chất nhé!
+                Hôm nay UmaiTea chính thức khai trương chi nhánh đầu tiên! Hãy ghé ngay cửa hàng để nhận ngay ưu đãi bùng nổ <strong>MUA 1 TẶNG 1</strong> (chỉ áp dụng mua trực tiếp tại quán) áp dụng cho toàn bộ thực đơn nước uống nguyên chất nhé!
                 <span className="coming-soon-address-block">
                   Địa chỉ: Số 222 Nguyễn Thượng Hiền, Phường Bàn Cờ, TP.HCM.
                 </span>
@@ -90,7 +90,7 @@ export default function ComingSoon() {
                   </svg>
                   <div className="promo-info-text">
                     <span className="promo-title-main">MUA 1 TẶNG 1</span>
-                    <span className="promo-sub-main">Áp dụng cho ngày hôm nay</span>
+                    <span className="promo-sub-main">Chỉ áp dụng mua trực tiếp tại quán</span>
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function ComingSoon() {
                   </svg>
                   <div className="promo-info-text">
                     <span className="promo-title-main">MUA 1 TẶNG 1</span>
-                    <span className="promo-sub-main">Áp dụng toàn thực đơn</span>
+                    <span className="promo-sub-main">Chỉ áp dụng mua trực tiếp tại quán</span>
                   </div>
                 </div>
               </div>
