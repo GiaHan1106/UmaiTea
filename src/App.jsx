@@ -11,7 +11,6 @@ import Footer from './components/Footer.jsx';
 import ReceiptModal from './components/ReceiptModal.jsx';
 import { PRODUCTS } from './data/products.js';
 import './App.css';
-import ComingSoon from './components/ComingSoon.jsx';
 import CartDrawer from './components/CartDrawer.jsx';
 import CheckoutModal from './components/CheckoutModal.jsx';
 import OrderChannelModal from './components/OrderChannelModal.jsx';
@@ -310,8 +309,7 @@ export default function App() {
             {/* Banner promotion slider */}
             <Hero onCtaClick={() => setActiveTab('menu')} />
 
-            {/* Coming Soon Countdown Bar */}
-            <ComingSoon />
+
 
             {/* Featured Section */}
             <section className="menu-display-section container">

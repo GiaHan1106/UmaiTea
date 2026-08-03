@@ -11,7 +11,7 @@ export default function AboutUs({ isHomePage = false }) {
             {/* Section Header */}
             <div className="section-header">
               <span className="section-cursive">Câu chuyện của chúng tôi</span>
-              <h2 className="section-title">VỀ UMAITEA</h2>
+              <h2 className="section-title">VỀ UMAI TEA</h2>
             </div>
 
             {/* Story Grid */}
@@ -90,7 +90,7 @@ export default function AboutUs({ isHomePage = false }) {
                   <span className="item-icon">🕒</span>
                   <div className="item-text">
                     <strong>Thời gian mở cửa:</strong>
-                    <span>08:30 - 22:30 (Mở cửa tất cả các ngày lễ Tết)</span>
+                    <span>08:30 - 22:30 (Mở cửa tất cả các ngày lễ)</span>
                   </div>
                 </div>
               </div>
