@@ -1,4 +1,4 @@
-export default function OrderChannelModal({ isOpen, onClose, onSelectWeb, grabLink = 'https://food.grab.com' }) {
+export default function OrderChannelModal({ isOpen, onClose, onSelectWeb, grabLink = 'https://r.grab.com/g/6-20260818_164328_B69D73EBBBBD46AA8C67AE141C912D07_MEXMPS-5-C8CHCT6UVECKVJ' }) {
   if (!isOpen) return null;
 
   const handleGrabSelect = () => {

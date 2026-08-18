@@ -13,6 +13,7 @@ export default function OrderModal({ product, onClose, onAddToCart }) {
   if (!product) return null;
 
   const isToppingProduct = product.category === 'TOPPING';
+  const isMilkTea = product.category === 'MILK TEA';
 
   const toppingsCost = isToppingProduct
     ? 0
@@ -21,7 +22,8 @@ export default function OrderModal({ product, onClose, onAddToCart }) {
         return total + (topping ? topping.price : 0);
       }, 0);
   const basePrice = product.price;
-  const sizeCost = (!isToppingProduct && size === 'L') ? 6000 : 0;
+  // Milk tea has only 1 size — no size L surcharge
+  const sizeCost = (!isToppingProduct && !isMilkTea && size === 'L') ? 6000 : 0;
   const unitPrice = basePrice + sizeCost + toppingsCost;
 
   const handleToppingToggle = (id) => {
@@ -92,28 +94,30 @@ export default function OrderModal({ product, onClose, onAddToCart }) {
               </div>
             ) : (
               <>
-                {/* Size options */}
-                <div className="modal-option-section">
-                  <h4 className="modal-option-title">
-                    CHỌN KÍCH CỠ <span className="modal-option-required">BẮT BUỘC</span>
-                  </h4>
-                  <div className="modal-option-grid">
-                    <button
-                      type="button"
-                      className={`modal-btn-option ${size === 'M' ? 'selected' : ''}`}
-                      onClick={() => setSize('M')}
-                    >
-                      Size M
-                    </button>
-                    <button
-                      type="button"
-                      className={`modal-btn-option ${size === 'L' ? 'selected' : ''}`}
-                      onClick={() => setSize('L')}
-                    >
-                      Size L (+6.000 ₫)
-                    </button>
+                {/* Size options — hidden for Milk Tea (only 1 size) */}
+                {!isMilkTea && (
+                  <div className="modal-option-section">
+                    <h4 className="modal-option-title">
+                      CHỌN KÍCH CỠ <span className="modal-option-required">BẮT BUỘC</span>
+                    </h4>
+                    <div className="modal-option-grid">
+                      <button
+                        type="button"
+                        className={`modal-btn-option ${size === 'M' ? 'selected' : ''}`}
+                        onClick={() => setSize('M')}
+                      >
+                        Size M
+                      </button>
+                      <button
+                        type="button"
+                        className={`modal-btn-option ${size === 'L' ? 'selected' : ''}`}
+                        onClick={() => setSize('L')}
+                      >
+                        Size L (+6.000 ₫)
+                      </button>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Sugar options */}
                 <div className="modal-option-section">

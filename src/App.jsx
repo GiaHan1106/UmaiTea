@@ -256,12 +256,7 @@ export default function App() {
   };
 
   const handleProductClick = (product) => {
-    if (!orderChannel && cartItems.length === 0) {
-      setPendingProduct(product);
-      setIsChannelModalOpen(true);
-    } else {
-      setSelectedProduct(product);
-    }
+    window.open('https://r.grab.com/g/6-20260818_164328_B69D73EBBBBD46AA8C67AE141C912D07_MEXMPS-5-C8CHCT6UVECKVJ', '_blank');
   };
 
   const handleSelectWeb = () => {
