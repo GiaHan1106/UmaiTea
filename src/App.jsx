@@ -9,6 +9,9 @@ import Recruitment from './components/Recruitment.jsx';
 
 import Footer from './components/Footer.jsx';
 import ReceiptModal from './components/ReceiptModal.jsx';
+import PromoBanner from './components/PromoBanner.jsx';
+import LoyaltySection from './components/LoyaltySection.jsx';
+import GoldenHours from './components/GoldenHours.jsx';
 import { PRODUCTS } from './data/products.js';
 import './App.css';
 import CartDrawer from './components/CartDrawer.jsx';
@@ -28,6 +31,8 @@ export default function App() {
         return 'franchise';
       case '/tuyen-dung':
         return 'recruitment';
+      case '/uu-dai':
+        return 'promotions';
       default:
         return 'home';
     }
@@ -45,6 +50,8 @@ export default function App() {
         return '/nhuong-quyen';
       case 'recruitment':
         return '/tuyen-dung';
+      case 'promotions':
+        return '/uu-dai';
       default:
         return '/trang-chu';
     }
@@ -304,7 +311,8 @@ export default function App() {
             {/* Banner promotion slider */}
             <Hero onCtaClick={() => setActiveTab('menu')} />
 
-
+            {/* Golden Hours — right below banner */}
+            <GoldenHours />
 
             {/* Featured Section */}
             <section className="menu-display-section container">
@@ -363,6 +371,15 @@ export default function App() {
 
             {/* Store and News Quick Previews */}
             <AboutUs isHomePage={true} />
+          </>
+        )}
+
+        {/* ── PROMOTIONS TAB ── */}
+        {activeTab === 'promotions' && (
+          <>
+            <GoldenHours />
+            <PromoBanner />
+            <LoyaltySection />
           </>
         )}
 

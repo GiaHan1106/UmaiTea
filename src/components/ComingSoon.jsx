@@ -71,29 +71,17 @@ export default function ComingSoon() {
             <>
               <div className="coming-soon-badge">🎉 CHÍNH THỨC KHAI TRƯƠNG 🎉</div>
               
-              <h2 className="coming-soon-title" style={{ color: 'var(--secondary)' }}>HÔM NAY UMAI KHAI TRƯƠNG MUA 1 TẶNG 1!</h2>
+              <h2 className="coming-soon-title" style={{ color: 'var(--secondary)' }}>HÔM NAY UMAI CHÍNH THỨC KHAI TRƯƠNG!</h2>
               <h3 className="coming-soon-subtitle">UMAITEA CHÀO BẠN</h3>
               
               <p className="coming-soon-desc">
-                Hôm nay UmaiTea chính thức khai trương chi nhánh đầu tiên! Hãy ghé ngay cửa hàng để nhận ngay ưu đãi bùng nổ <strong>MUA 1 TẶNG 1</strong> (chỉ áp dụng mua trực tiếp tại quán) áp dụng cho toàn bộ thực đơn nước uống nguyên chất nhé!
+                Hôm nay UmaiTea chính thức khai trương chi nhánh đầu tiên! Hãy ghé ngay cửa hàng để thưởng thức trọn vẹn hương vị trà sữa nguyên lá và trà trái cây tươi mát của chúng mình nhé!
                 <span className="coming-soon-address-block">
                   Địa chỉ: Số 222 Nguyễn Thượng Hiền, Phường Bàn Cờ, TP.HCM.
                 </span>
               </p>
 
-              <div className="coming-soon-promos" style={{ justifyContent: 'center' }}>
-                <div className="promo-badge-item promo-buy1get1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="promo-icon-svg promo-icon-red">
-                    <path d="M6 8L7 22H17L18 8H6Z" />
-                    <path d="M5 8H19" />
-                    <path d="M12 2L10 8" />
-                  </svg>
-                  <div className="promo-info-text">
-                    <span className="promo-title-main">MUA 1 TẶNG 1</span>
-                    <span className="promo-sub-main">Chỉ áp dụng mua trực tiếp tại quán</span>
-                  </div>
-                </div>
-              </div>
+
 
               <div style={{ marginTop: '25px', textAlign: 'center' }}>
                 <button
